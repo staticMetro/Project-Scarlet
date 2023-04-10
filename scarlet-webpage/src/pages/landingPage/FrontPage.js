@@ -1,6 +1,6 @@
-import Top from './Top'
-import Center from './Center'
-import Footer from './Footer';
+import Top from './components/Top'
+import Center from './components/Center'
+import Footer from './components/Footer';
 
 
 const FrontPage = () => {
