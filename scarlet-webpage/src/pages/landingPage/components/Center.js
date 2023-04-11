@@ -1,10 +1,14 @@
+//My Files
+import "./../../../styles/landingPageStyles/index.css"
 
+//Material UI
+import { Box } from '@mui/material';
 
 function Center() {
     return (
-        <div>
+        <Box className="center">
             Center
-            </div>)
+        </Box>)
 }
 
 export default Center;
