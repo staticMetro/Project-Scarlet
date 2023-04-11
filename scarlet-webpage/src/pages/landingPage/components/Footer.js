@@ -1,11 +1,16 @@
+//My Files
+import "./../../../styles/landingPageStyles/index.css"
+import NavList from './NavList'
 
-
+//Material UI
+import { Box } from '@mui/material';
 
 function Footer() {
     return (
-        <div>
-            Footer
-        </div>)
+        <Box className="footer">
+            <NavList/>
+        </Box>
+    )
 }
 
 export default Footer;
