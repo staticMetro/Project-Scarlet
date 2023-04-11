@@ -18,10 +18,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let rootNavigationController = UINavigationController()
-        let periodViewController = PeriodViewController()
-        let calendarViewController = CalendarViewController()
+//        let periodViewController = PeriodViewController()
+//        let calendarViewController = CalendarViewController()
 
-        periodCoordinator = PeriodCoordinator(navigationController: rootNavigationController, periodViewController: periodViewController, calendarViewController: calendarViewController)
+        periodCoordinator = PeriodCoordinator(navigationController: rootNavigationController)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = rootNavigationController

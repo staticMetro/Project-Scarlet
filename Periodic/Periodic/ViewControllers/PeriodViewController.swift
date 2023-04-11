@@ -13,7 +13,7 @@ class PeriodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        view.backgroundColor = .brown
+        view.backgroundColor = .systemMint
         addSubviews()
     }
     
@@ -67,8 +67,8 @@ class PeriodViewController: UIViewController {
         circleView.addSubview(ovulationLabel)
         ovulationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            ovulationLabel.centerXAnchor.constraint(equalTo: circleView.centerXAnchor),
-            ovulationLabel.topAnchor.constraint(equalTo: circleView.topAnchor, constant: 70)
+            ovulationLabel.centerXAnchor.constraint(equalTo: circleView.centerXAnchor, constant: 100),
+            ovulationLabel.topAnchor.constraint(equalTo: circleView.topAnchor, constant: 150)
         ])
         
         let daysLabel = UILabel()

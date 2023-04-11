@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import UIKit
+
+protocol CalendarViewModelProtocol {
+    //
+}
+struct CalendarViewModel: CalendarViewModelProtocol {
+    //
+}

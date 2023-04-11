@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+protocol LoadingViewModelProtocol {
+    //
+}
+struct LoadingViewModel: LoadingViewModelProtocol {
+    //
+}

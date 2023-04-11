@@ -14,30 +14,37 @@ protocol Coordinator {
 
 class PeriodCoordinator: Coordinator {
     
-    private var periodViewController: PeriodViewController
-    private var calendarViewController: CalendarViewController
+//    private var periodViewController: PeriodViewController
+//    private var calendarViewController: CalendarViewController
     private let navigationController: UINavigationController
-
-    
-    init(navigationController: UINavigationController, periodViewController: PeriodViewController, calendarViewController: CalendarViewController) {
+//
+//    
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.periodViewController = periodViewController
-        self.calendarViewController = calendarViewController
+//        self.periodViewController = periodViewController
+//        self.calendarViewController = calendarViewController
 
     }
     
     func start() {
-        coordinateToPeriodView()
-//        coordinateToCalendarView()
+//        coordinateToLoadingView()
+//        coordinateToPeriodView()
+        coordinateToCalendarView()
     }
     
     func coordinateToPeriodView() {
         let viewController = PeriodViewController()
-        navigationController.viewControllers = [viewController]
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func coordinateToCalendarView() {
         let viewController = CalendarViewController()
         navigationController.viewControllers = [viewController]
     }
+    
+    func coordinateToLoadingView() {
+        let viewController = LoadingViewController()
+        navigationController.viewControllers = [viewController]
+    }
+
 }
