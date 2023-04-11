@@ -20,7 +20,6 @@ const Top = () => {
                 }} component={RouterLink} to={"https://www.apple.com/app-store/"}>
                     <img src={"https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1276560000&h=7e7b68fad19738b5649a1bfb78ff46e9"} alt={"Apple Store Button"} />
                 </Button>
-
             </Box>
         </Box>)
 }
