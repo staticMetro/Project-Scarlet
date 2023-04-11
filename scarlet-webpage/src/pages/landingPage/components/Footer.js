@@ -8,7 +8,20 @@ import { Box } from '@mui/material';
 function Footer() {
     return (
         <Box className="footer">
-            <NavList/>
+            <Box className="footer-wrapper">
+                <NavList />
+                <Box sx={{whiteSpace: "nowrap"}}>
+                    <Box component="span">
+                        {`Terms and Conditions | `}
+                    </Box>
+                    <Box component="span">
+                        {`Privacy Policy | `}
+                    </Box>
+                    <Box component="span">
+                        All Rights Reserved &copy;2023 Periodic App
+                    </Box>
+                    </Box>
+            </Box>
         </Box>
     )
 }
