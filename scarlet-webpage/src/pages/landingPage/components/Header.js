@@ -3,7 +3,6 @@ import { Link as RouterLink} from 'react-router-dom';
 const Header = () => {
 
     const Item = ({ text, to, selected }) => {
-        console.log(text);
         return (
             <ListItem key={text}
                 selected={selected === text}
