@@ -4,11 +4,12 @@ import "./../../../styles/landingPageStyles/index.css"
 //Material UI
 import { Box } from '@mui/material';
 
-function Center() {
+const Testimonials = () => {
+
     return (
-        <Box className="center">
-            Center
+        <Box className="testimonials">
+            Testimonials
         </Box>)
 }
 
-export default Center;
+export default Testimonials;
