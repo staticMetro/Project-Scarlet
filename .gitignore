@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/scarlet-webpage/.vs/scarlet-webpage/v17/.suo
+/scarlet-webpage/.vs/slnx.sqlite
+/scarlet-webpage/.vs
