@@ -10,8 +10,10 @@ const Header = () => {
     return (
         <Box className="header">
             <Box className="header-wrapper">
-                <img src={"/appstore.png"} alt={"Periodic App Icon"}/>
-                <NavList/>
+                <Box sx={{backgroundColor: "white", borderRadius: "9px"}}>
+                    <img src={"/appstore.png"} alt={"Periodic App Icon"} />
+                </Box>
+                <NavList />
             </Box>
         </Box>
     )
