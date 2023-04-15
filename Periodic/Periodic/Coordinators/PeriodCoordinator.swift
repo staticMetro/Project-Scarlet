@@ -29,7 +29,9 @@ class PeriodCoordinator: Coordinator {
     func start() {
 //        coordinateToLoadingView()
 //        coordinateToPeriodView()
-        coordinateToCalendarView()
+//        coordinateToCalendarView()
+//        coordinateToWelcomeView()
+        coordinateToProfileView()
     }
     
     func coordinateToPeriodView() {
@@ -44,6 +46,16 @@ class PeriodCoordinator: Coordinator {
     
     func coordinateToLoadingView() {
         let viewController = LoadingViewController()
+        navigationController.viewControllers = [viewController]
+    }
+    
+    func coordinateToWelcomeView() {
+        let viewController = WelcomeScreenViewController()
+        navigationController.viewControllers = [viewController]
+    }
+    
+    func coordinateToProfileView() {
+        let viewController = ProfileViewController()
         navigationController.viewControllers = [viewController]
     }
 

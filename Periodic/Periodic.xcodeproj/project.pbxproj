@@ -21,6 +21,10 @@
 		B28F2FE029E343FD0087B515 /* PeriodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FDF29E343FD0087B515 /* PeriodModel.swift */; };
 		B28F2FE329E344160087B515 /* PeriodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FE229E344160087B515 /* PeriodCoordinator.swift */; };
 		B28F2FE629E3444A0087B515 /* PeriodDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FE529E3444A0087B515 /* PeriodDataManager.swift */; };
+		B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */; };
+		B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */; };
+		B2DCBDEB29EB00E60098BB52 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */; };
+		B2DCBDED29EB00E90098BB52 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */; };
 		B2E3448C29E5EEAE001D2279 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */; };
 		B2E3449029E5EF4D001D2279 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3448F29E5EF4D001D2279 /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +65,11 @@
 		B28F2FDF29E343FD0087B515 /* PeriodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodModel.swift; sourceTree = "<group>"; };
 		B28F2FE229E344160087B515 /* PeriodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodCoordinator.swift; sourceTree = "<group>"; };
 		B28F2FE529E3444A0087B515 /* PeriodDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodDataManager.swift; sourceTree = "<group>"; };
+		B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B2DCBDEE29EB06C00098BB52 /* Periodic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Periodic.entitlements; sourceTree = "<group>"; };
 		B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B2E3448F29E5EF4D001D2279 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +122,7 @@
 		B28F2FA529E33AE60087B515 /* Periodic */ = {
 			isa = PBXGroup;
 			children = (
+				B2DCBDEE29EB06C00098BB52 /* Periodic.entitlements */,
 				B28F2FA629E33AE60087B515 /* AppDelegate.swift */,
 				B28F2FA829E33AE60087B515 /* SceneDelegate.swift */,
 				B28F2FE729E344520087B515 /* DataManager */,
@@ -151,6 +161,9 @@
 				B28F2FAA29E33AE60087B515 /* PeriodViewController.swift */,
 				B28F2FD629E343340087B515 /* CalendarViewController.swift */,
 				B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */,
+				B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */,
+				B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */,
+				B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,6 +173,7 @@
 			children = (
 				B28F2FDA29E343A40087B515 /* CalendarViewModel.swift */,
 				B28F2FDC29E343D00087B515 /* LoadingViewModel.swift */,
+				B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -331,12 +345,16 @@
 				B28F2FAB29E33AE60087B515 /* PeriodViewController.swift in Sources */,
 				B28F2FE029E343FD0087B515 /* PeriodModel.swift in Sources */,
 				B28F2FA729E33AE60087B515 /* AppDelegate.swift in Sources */,
+				B2DCBDED29EB00E90098BB52 /* WelcomeViewController.swift in Sources */,
 				B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */,
 				B28F2FDB29E343A40087B515 /* CalendarViewModel.swift in Sources */,
 				B2E3449029E5EF4D001D2279 /* Extensions.swift in Sources */,
+				B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */,
 				B2E3448C29E5EEAE001D2279 /* LoadingViewController.swift in Sources */,
 				B28F2FDD29E343D00087B515 /* LoadingViewModel.swift in Sources */,
+				B2DCBDEB29EB00E60098BB52 /* SignInViewController.swift in Sources */,
 				B28F2FE629E3444A0087B515 /* PeriodDataManager.swift in Sources */,
+				B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +521,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Periodic/Periodic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FDM4D7L667;
@@ -530,6 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Periodic/Periodic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FDM4D7L667;
