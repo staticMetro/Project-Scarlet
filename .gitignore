@@ -5,3 +5,10 @@
 /scarlet-webpage/.vs/scarlet-webpage/v17/.suo
 /scarlet-webpage/.vs/slnx.sqlite
 /scarlet-webpage/.vs
+/.vs
+/scarlet-server/.vs/server/v17
+/scarlet-server/server/obj
+/scarlet-server/server/bin
+/scarlet-server/server/server.njsproj.user
+/scarlet-server/server.sln
+/scarlet-server/server/server.njsproj
