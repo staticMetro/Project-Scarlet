@@ -11,7 +11,7 @@ router
 router
     .route('/:id')
     .get(periodController.getPeriod)
-    .patch(periodConctroller.updatePeriod)
+    .patch(periodController.updatePeriod)
     .delete(periodController.deletePeriod);
 
 module.exports = router;
