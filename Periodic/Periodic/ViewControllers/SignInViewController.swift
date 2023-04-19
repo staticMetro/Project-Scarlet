@@ -7,13 +7,32 @@
 
 import Foundation
 import UIKit
+import AuthenticationServices
 
-class SignInScreenViewController: UIViewController {
+class SignInScreenViewController: UIViewController, ASAuthorizationControllerDelegate {
+    
     
     // MARK: - Properties
     
     private var emailTextField: UITextField!
     private var passwordTextField: UITextField!
+    
+    lazy var appleLoginButton: ASAuthorizationAppleIDButton = {
+        let button = ASAuthorizationAppleIDButton()
+        button.addTarget(self, action: #selector(appleLoginButtonTapped), for: .touchUpInside)
+        button.backgroundColor = .systemBackground
+        return button
+    }()
+    
+    @objc func appleLoginButtonTapped() {
+        
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName, .email]
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+//        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
 
     
     // MARK: - Lifecycle
@@ -22,6 +41,10 @@ class SignInScreenViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     // MARK: - Private Methods
@@ -33,30 +56,27 @@ class SignInScreenViewController: UIViewController {
         signInLabel.text = "Sign In"
         signInLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
         signInLabel.textAlignment = .center
-        signInLabel.textColor = .black
+        signInLabel.textColor = .secondaryLabel
         view.addSubview(signInLabel)
-        
-        let appleButton = SocialLoginButton(image: UIImage(named: "apple")!, text: "Sign in with Apple")
-        view.addSubview(appleButton)
+
+        view.addSubview(appleLoginButton)
         
         let googleButton = SocialLoginButton(image: UIImage(named: "google")!, text: "Sign in with Google")
         googleButton.setTitleColor(UIColor(named: "PrimaryColor"), for: .normal)
         view.addSubview(googleButton)
         
-        let emailLabel = UILabel()
-        emailLabel.text = "Email"
-        emailLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        emailLabel.textColor = .secondarySystemFill
-        emailLabel.textAlignment = .center
-        view.addSubview(emailLabel)
+//        let emailLabel = UILabel()
+//        emailLabel.text = "Email"
+//        emailLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+//        emailLabel.textColor = .secondarySystemFill
+//        emailLabel.textAlignment = .center
+//        view.addSubview(emailLabel)
         
         emailTextField = UITextField()
         emailTextField.placeholder = "Email"
         emailTextField.font = UIFont.systemFont(ofSize: 26, weight: .regular)
         emailTextField.backgroundColor = .systemBackground
-        emailTextField.layer.cornerRadius = 50
-        emailTextField.layer.cornerRadius = 10
-
+        emailTextField.layer.cornerRadius = 25
         emailTextField.layer.shadowColor = UIColor.black.cgColor
         emailTextField.layer.shadowOpacity = 0.08
         emailTextField.layer.shadowRadius = 60
@@ -66,18 +86,18 @@ class SignInScreenViewController: UIViewController {
         emailTextField.autocapitalizationType = .none
         view.addSubview(emailTextField)
         
-        let passwordLabel = UILabel()
-        passwordLabel.text = "Password"
-        passwordLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        passwordLabel.textColor = .secondarySystemFill
-        passwordLabel.textAlignment = .center
-        view.addSubview(passwordLabel)
+//        let passwordLabel = UILabel()
+//        passwordLabel.text = "Password"
+//        passwordLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+//        passwordLabel.textColor = .secondarySystemFill
+//        passwordLabel.textAlignment = .center
+//        view.addSubview(passwordLabel)
         
         passwordTextField = UITextField()
-        passwordTextField.placeholder = " "
+        passwordTextField.placeholder = "Password"
         passwordTextField.font = UIFont.systemFont(ofSize: 26, weight: .regular)
-        passwordTextField.backgroundColor = .gray
-        passwordTextField.layer.cornerRadius = 50
+//        passwordTextField.backgroundColor = .gray
+        passwordTextField.layer.cornerRadius = 25
         passwordTextField.layer.shadowColor = UIColor.black.cgColor
         passwordTextField.layer.shadowOpacity = 0.08
         passwordTextField.layer.shadowRadius = 60
@@ -90,17 +110,17 @@ class SignInScreenViewController: UIViewController {
 //        emailButton.setTitle("Email me a signup link", for: .normal)
 //        view.addSubview(emailButton)
         
-        let safeLabel = UILabel()
-        safeLabel.text = "You are completely safe."
-        safeLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-        safeLabel.textColor = .secondaryLabel
-        safeLabel.textAlignment = .center
-        view.addSubview(safeLabel)
-        
-        let termsButton = UIButton()
-        termsButton.setTitle("Read our Terms & Conditions.", for: .normal)
-        termsButton.setTitleColor(UIColor(named: "PrimaryColor"), for: .normal)
-        view.addSubview(termsButton)
+//        let safeLabel = UILabel()
+//        safeLabel.text = "You are completely safe."
+//        safeLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
+//        safeLabel.textColor = .secondaryLabel
+//        safeLabel.textAlignment = .center
+//        view.addSubview(safeLabel)
+//
+//        let termsButton = UIButton()
+//        termsButton.setTitle("Read our Terms & Conditions.", for: .normal)
+//        termsButton.setTitleColor(UIColor(named: "PrimaryColor"), for: .normal)
+//        view.addSubview(termsButton)
         
         // Constraints
         
@@ -110,25 +130,29 @@ class SignInScreenViewController: UIViewController {
         signInLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         signInLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
-        emailLabel.translatesAutoresizingMaskIntoConstraints = false
-        emailLabel.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 50).isActive = true
-        emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        emailLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 10).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 50).isActive = true
         emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
-//        appleButton.translatesAutoresizingMaskIntoConstraints = false
-//        appleButton.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 50).isActive = true
-//        appleButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-//        appleButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10).isActive = true
+        passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+        passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         
-//        googleButton.translatesAutoresizingMaskIntoConstraints = false
-//        googleButton.topAnchor.constraint(equalTo: appleButton.bottomAnchor, constant: 10).isActive = true
-//        googleButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-//        googleButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        appleLoginButton.translatesAutoresizingMaskIntoConstraints = false
+        appleLoginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10).isActive = true
+        appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.9).isActive = true
+        appleLoginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        googleButton.translatesAutoresizingMaskIntoConstraints = false
+        googleButton.topAnchor.constraint(equalTo: appleLoginButton.bottomAnchor, constant: 40).isActive = true
+        googleButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,multiplier: 0.9).isActive = true
+        googleButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        googleButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+
     }
 }
 class SocialLoginButton: UIButton {
