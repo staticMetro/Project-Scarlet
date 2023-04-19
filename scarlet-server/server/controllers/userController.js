@@ -1,27 +1,43 @@
 const User = require('./../models/userModel.js')
 
-const Period = require('./../models/periodModel.js')
+exports.getAllUsers = async (request, response) => {
+    try {
+        console.log('here');
+        const users = await User.find();
 
-exports.getAllPeriods = (request, response) => {
+        response.status(200).json({
+            status: 'success',
+            data: {
+                users
+            }
+        })
+
+    } catch (err) {
+
+        response.status(400).json({
+            status: "fail",
+            message: err
+        })
+    }
 
 }
 
-exports.getPeriod = (request, response) => {
+exports.getUser = (request, response) => {
 
     const id = request.params.id * 1;
 
     const period = Period.find(id);
 }
 
-exports.updatePeriod = (request, response) => {
+exports.updateUser = (request, response) => {
 
 }
 
-exports.deletePeriod = (request, response) => {
+exports.deleteUser = (request, response) => {
 
 
 }
 
-exports.createPeriod = (request, response) => {
+exports.createUser = (request, response) => {
 
 }

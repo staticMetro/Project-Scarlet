@@ -20,6 +20,21 @@ exports.deletePeriod = (request, response) => {
 
 }
 
-exports.createPeriod = (request, response) => {
+exports.createPeriod = async (request, response) => {
 
+    try {
+        const newPeriod = await Period.create(request.body);
+
+        response.status(201).json({
+            status: "success",
+            data: {
+                period: newPeriod
+            }
+        })
+    } catch (err) {
+        response.status(400).json({
+            status: "fail",
+            message: err
+        })
+    }
 }
