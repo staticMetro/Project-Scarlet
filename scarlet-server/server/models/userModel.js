@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Period = require('./periodModel.js')
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -19,7 +20,8 @@ const userSchema = new mongoose.Schema({
     },
     confirmPassword: {
         type: String,
-    }
+    },
+    periods: {}
 })
 
 const User = mongoose.model("User", userSchema);
