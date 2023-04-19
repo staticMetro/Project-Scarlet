@@ -1,17 +1,17 @@
 const express = require('express');
-const periodController = require('./../controllers/userController')
+const userController = require('./../controllers/userController')
 
 const router = express.Router();
 
 router
     .route('/')
-    .get(userController.getAllPeriods)
-    .post(userController.createPeriod)
+    .get(userController.getAllUser)
+    .post(userController.createUser)
 
 router
     .route('/:id')
-    .get(userController.getPeriod)
-    .patch(userConctroller.updatePeriod)
-    .delete(userController.deletePeriod);
+    .get(userController.getUser)
+    .patch(userConctroller.updateUser)
+    .delete(userController.deleteUser);
 
 module.exports = router;
