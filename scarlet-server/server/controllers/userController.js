@@ -1,10 +1,10 @@
-const User = require('./../models/userModel.js')
+const User = require('./../models/userModel')
 
 exports.getAllUsers = async (request, response) => {
     try {
         console.log('here');
         const users = await User.find();
-
+        console.log(users);
         response.status(200).json({
             status: 'success',
             data: {
@@ -38,6 +38,13 @@ exports.deleteUser = (request, response) => {
 
 }
 
-exports.createUser = (request, response) => {
+exports.createUser = async (request, response) => {
+    const user = await User.create(request.body);
 
+    response.status(201).json({
+        status: "success",
+        data: {
+            user
+        }
+    })
 }
