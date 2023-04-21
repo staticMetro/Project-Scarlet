@@ -1,7 +1,18 @@
 const Period = require('./../models/periodModel.js')
 
-exports.getAllPeriods = (request, response) => {
+exports.getAllPeriods = async (request, response) => {
+    try {
+        const periods = await Period.find();
 
+        response.status(200).json({
+            status: "success",
+            data: {
+                periods
+            }
+        })
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 exports.getPeriod = (request, response) => {
