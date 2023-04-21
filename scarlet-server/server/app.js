@@ -16,7 +16,12 @@ if (process.env.NODE_ENV === 'development') {
 
 
 
-
+app.get("/", function (request, response, next) {
+    response.status(200).json({
+        status: "success",
+        message: "You have made a get request"
+    })
+})
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/periods", periodRouter);
 app.use("/api/v1/reviews", reviewRouter);
