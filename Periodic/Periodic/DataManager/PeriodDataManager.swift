@@ -15,6 +15,7 @@ enum PeriodDataManagingResponseStatus<T> {
 }
 
 protocol PeriodDataManaging {
+    func fetchUserInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void)
     func fetchUserPeriodInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void)
 }
 
@@ -23,13 +24,18 @@ struct PeriodDataManager: PeriodDataManaging {
     private struct Constant {
         // swiftlint:disable nesting
         struct URL {
-            static let apiURLString = ""
+            static let apiURLStringUsers = "https://scarlet-server.herokuapp.com/api/v1/users"
+            static let apiURLStringUserPeriod = "https://scarlet-server.herokuapp.com/api/v1/period"
         }
         // swiftlint:enable nesting
     }
     
+    func fetchUserInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void) {
+        fetchData(urlString: Constant.URL.apiURLStringUsers, modelType: PeriodModel.self, completion: { completion($0) })
+    }
+    
     func fetchUserPeriodInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void) {
-        fetchData(urlString: Constant.URL.apiURLString, modelType: PeriodModel.self, completion: { completion($0) })
+        fetchData(urlString: Constant.URL.apiURLStringUserPeriod, modelType: PeriodModel.self, completion: { completion($0) })
     }
     
     private func fetchData<T: Decodable>(urlString: String, modelType: T.Type,

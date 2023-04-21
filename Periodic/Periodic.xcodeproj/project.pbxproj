@@ -26,6 +26,9 @@
 		B2DCBDEB29EB00E60098BB52 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */; };
 		B2DCBDED29EB00E90098BB52 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */; };
 		B2DCBDF029EF6BB30098BB52 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEF29EF6BB30098BB52 /* SignInViewModel.swift */; };
+		B2DCBDF229F342DE0098BB52 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF129F342DE0098BB52 /* UserModel.swift */; };
+		B2DCBDF429F348BF0098BB52 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */; };
+		B2DCBDF629F348CB0098BB52 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */; };
 		B2E3448C29E5EEAE001D2279 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */; };
 		B2E3449029E5EF4D001D2279 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3448F29E5EF4D001D2279 /* Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +75,9 @@
 		B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B2DCBDEE29EB06C00098BB52 /* Periodic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Periodic.entitlements; sourceTree = "<group>"; };
 		B2DCBDEF29EF6BB30098BB52 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		B2DCBDF129F342DE0098BB52 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B2E3448F29E5EF4D001D2279 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +172,7 @@
 				B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */,
 				B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */,
 				B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */,
+				B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 			children = (
 				B28F2FDA29E343A40087B515 /* CalendarViewModel.swift */,
 				B28F2FDC29E343D00087B515 /* LoadingViewModel.swift */,
+				B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */,
 				B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */,
 				B2DCBDEF29EF6BB30098BB52 /* SignInViewModel.swift */,
 			);
@@ -185,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				B28F2FDF29E343FD0087B515 /* PeriodModel.swift */,
+				B2DCBDF129F342DE0098BB52 /* UserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,8 +358,11 @@
 				B28F2FE029E343FD0087B515 /* PeriodModel.swift in Sources */,
 				B28F2FA729E33AE60087B515 /* AppDelegate.swift in Sources */,
 				B2DCBDED29EB00E90098BB52 /* WelcomeViewController.swift in Sources */,
+				B2DCBDF629F348CB0098BB52 /* ErrorViewModel.swift in Sources */,
 				B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */,
+				B2DCBDF429F348BF0098BB52 /* ErrorViewController.swift in Sources */,
 				B28F2FDB29E343A40087B515 /* CalendarViewModel.swift in Sources */,
+				B2DCBDF229F342DE0098BB52 /* UserModel.swift in Sources */,
 				B2E3449029E5EF4D001D2279 /* Extensions.swift in Sources */,
 				B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */,
 				B2E3448C29E5EEAE001D2279 /* LoadingViewController.swift in Sources */,

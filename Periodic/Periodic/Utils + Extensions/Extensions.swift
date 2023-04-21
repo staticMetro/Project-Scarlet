@@ -18,3 +18,4 @@ extension UIImageView {
         self.layer.add(rotation, forKey: "rotationAnimation")
     }
 }
+
