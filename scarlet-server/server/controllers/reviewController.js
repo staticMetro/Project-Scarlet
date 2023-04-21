@@ -1,7 +1,18 @@
 const Review = require('./../models/reviewModel')
 
-exports.getAllReviews = (request, response) => {
+exports.getAllReviews = async (request, response) => {
+    try {
+        const reviews = await Review.find();
 
+        response.status(200).json({
+            status: "success",
+            data: {
+                reviews
+            }
+        })
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 exports.getReview = async (request, response) => {
