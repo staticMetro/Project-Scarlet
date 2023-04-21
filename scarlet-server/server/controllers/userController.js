@@ -2,9 +2,8 @@ const User = require('./../models/userModel')
 
 exports.getAllUsers = async (request, response) => {
     try {
-        console.log('here');
         const users = await User.find();
-        console.log(users);
+
         response.status(200).json({
             status: 'success',
             data: {
