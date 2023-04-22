@@ -1,14 +1,19 @@
 const express = require('express');
 const compression = require('compression')
 const cors = require('cors')
+const morgan = require('morgan')
+
 const userRouter = require("./routes/userRoutes")
 const periodRouter = require("./routes/periodRoutes");
 const reviewRouter = require("./routes/reviewRoutes");
-const morgan = require('morgan')
+
 const app = express();
 
 app.use(compression());
 app.use(cors());
+
+//Body Parser
+app.use(express.json());
 
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
