@@ -3,25 +3,25 @@ const mongoose = require('mongoose');
 const periodSchema = new mongoose.Schema({
     periodStart: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
     periodEnd: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
     nextPeriod: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
     fertileWindowStart: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
     fertileWindowEnd: {
         type: Date,
-        default: Date.now
+        default: Date.now()
     },
-    futurePeriods: Array,
+    futurePeriods: [Date],
     sexuallyActive: {
         type: Boolean,
         required: [true, "You must input your sexual activity"]
