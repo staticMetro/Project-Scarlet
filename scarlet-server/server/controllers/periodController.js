@@ -1,11 +1,14 @@
 const Period = require('./../models/periodModel')
+const APIFeatures = require('./../utils/apiFeatures')
 
 exports.getAllPeriods = async (request, response) => {
     try {
-        const periods = await Period.find();
+        const features = new APIFeatures(Period.find(), request.query).filter().paginate().limitFields().sort();
+        const periods = await features.query; 
 
         response.status(200).json({
             status: "success",
+            results: periods.length,
             data: {
                 periods
             }
