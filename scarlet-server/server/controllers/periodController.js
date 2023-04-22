@@ -1,4 +1,4 @@
-const Period = require('./../models/periodModel.js')
+const Period = require('./../models/periodModel')
 
 exports.getAllPeriods = async (request, response) => {
     try {
@@ -34,6 +34,7 @@ exports.deletePeriod = (request, response) => {
 exports.createPeriod = async (request, response) => {
 
     try {
+        console.log(request);
         const newPeriod = await Period.create(request.body);
 
         response.status(201).json({
