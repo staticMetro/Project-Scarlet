@@ -10,8 +10,6 @@ import UIKit
 import SwiftUI
 
 class CalendarViewController: UIViewController {
-    
-//    private let calendarView = UICalendarView()
     private let periodLabel = UILabel()
     private let fertileLabel = UILabel()
     private let ovulationLabel = UILabel()
@@ -23,14 +21,11 @@ class CalendarViewController: UIViewController {
         setUpLabel(periodLabel, "PERIOD")
         setUpLabel(periodLabel, "FERTILE")
         setUpLabel(periodLabel, "OVULATION")
-        
         setUpConstraints()
-        
     }
     
     private func setUpConstraints() {
         view.addSubview(periodLabel)
-        
         NSLayoutConstraint.activate([
             periodLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             periodLabel.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -40),
@@ -56,13 +51,9 @@ class CalendarViewController: UIViewController {
            calendarView.layer.cornerRadius = 12
            calendarView.backgroundColor = .systemBackground
            calendarView.availableDateRange = DateInterval(start: .now, end: .distantFuture)
-           
-           
-           let selection = UICalendarSelectionSingleDate(delegate: self)
+        let selection = UICalendarSelectionSingleDate(delegate: self)
            calendarView.selectionBehavior = selection
-           
            view.addSubview(calendarView)
-           
            NSLayoutConstraint.activate([
                calendarView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
                calendarView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
@@ -73,12 +64,11 @@ class CalendarViewController: UIViewController {
    }
 
    extension CalendarViewController: UICalendarViewDelegate {
-       func calendarView(_ calendarView: UICalendarView, decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
-           
+       func calendarView(_ calendarView: UICalendarView,
+                         decorationFor dateComponents: DateComponents) -> UICalendarView.Decoration? {
            guard let day = dateComponents.day else {
                return nil
            }
-           
            if !day.isMultiple(of: 2) {
                return UICalendarView.Decoration.default(color: .systemPink, size: .large)
            }
@@ -88,21 +78,16 @@ class CalendarViewController: UIViewController {
            if (day.distance(to: 29) <= 9) {
                return UICalendarView.Decoration.default(color: .systemCyan, size: .large)
            }
-           
            return nil
        }
-       
-       
    }
 
    extension CalendarViewController: UICalendarSelectionSingleDateDelegate {
-       
-       func dateSelection(_ selection: UICalendarSelectionSingleDate, canSelectDate dateComponents: DateComponents?) -> Bool {
+       func dateSelection(_ selection: UICalendarSelectionSingleDate,
+                          canSelectDate dateComponents: DateComponents?) -> Bool {
            return true
        }
-       
-       
        func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-           print(dateComponents)
+           print(dateComponents as Any)
        }
 }

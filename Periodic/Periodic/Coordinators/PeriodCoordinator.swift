@@ -14,18 +14,11 @@ protocol Coordinator {
 
 class PeriodCoordinator: Coordinator {
     private let dataManager: PeriodDataManaging
-
-//    private var periodViewController: PeriodViewController
-//    private var calendarViewController: CalendarViewController
     private let navigationController: UINavigationController
-//
-//    
+   
     init(navigationController: UINavigationController, dataManager: PeriodDataManaging) {
         self.navigationController = navigationController
         self.dataManager = dataManager
-//        self.periodViewController = periodViewController
-//        self.calendarViewController = calendarViewController
-
     }
     
     func start() {
@@ -43,8 +36,8 @@ class PeriodCoordinator: Coordinator {
             //        coordinateToLoadingView()
             //        coordinateToPeriodView()
             //        coordinateToCalendarView()
-            //        coordinateToWelcomeView()
-            coordinateToErrorView()
+                    coordinateToWelcomeView()
+//            coordinateToErrorView()
 //            coordinateToProfileView()
         }
         
@@ -96,7 +89,8 @@ class PeriodCoordinator: Coordinator {
         
         func coordinateToWelcomeView() {
             let viewController = WelcomeScreenViewController()
-            navigationController.viewControllers = [viewController]
+            navigationController.addChild(viewController)
+            navigationController.viewControllers = [navigationController.children[0]]
         }
         
         func coordinateToProfileView() {

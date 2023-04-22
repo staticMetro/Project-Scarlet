@@ -58,7 +58,7 @@ class ErrorViewController: UIViewController {
         constraints.append(errorImageView.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor))
         constraints.append(errorImageView.heightAnchor.constraint(equalTo: errorImageView.widthAnchor, multiplier: 0.9))
 
-        constraints.append(label.topAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: -75))
+        constraints.append(label.topAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: -150))
         constraints.append(label.bottomAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150))
         constraints.append(label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 40))
         constraints.append(label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -60))

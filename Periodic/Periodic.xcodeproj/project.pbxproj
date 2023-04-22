@@ -21,6 +21,8 @@
 		B28F2FE029E343FD0087B515 /* PeriodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FDF29E343FD0087B515 /* PeriodModel.swift */; };
 		B28F2FE329E344160087B515 /* PeriodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FE229E344160087B515 /* PeriodCoordinator.swift */; };
 		B28F2FE629E3444A0087B515 /* PeriodDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FE529E3444A0087B515 /* PeriodDataManager.swift */; };
+		B2CA5F1629F425B500D35A1F /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B2CA5F1529F425B500D35A1F /* GoogleSignIn */; };
+		B2CA5F1829F425B500D35A1F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B2CA5F1729F425B500D35A1F /* GoogleSignInSwift */; };
 		B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */; };
 		B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */; };
 		B2DCBDEB29EB00E60098BB52 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */; };
@@ -87,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CA5F1629F425B500D35A1F /* GoogleSignIn in Frameworks */,
+				B2CA5F1829F425B500D35A1F /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,12 +236,17 @@
 				B28F2F9F29E33AE60087B515 /* Sources */,
 				B28F2FA029E33AE60087B515 /* Frameworks */,
 				B28F2FA129E33AE60087B515 /* Resources */,
+				B2CA5F1329F4235E00D35A1F /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Periodic;
+			packageProductDependencies = (
+				B2CA5F1529F425B500D35A1F /* GoogleSignIn */,
+				B2CA5F1729F425B500D35A1F /* GoogleSignInSwift */,
+			);
 			productName = Periodic;
 			productReference = B28F2FA329E33AE60087B515 /* Periodic.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +319,9 @@
 				Base,
 			);
 			mainGroup = B28F2F9A29E33AE60087B515;
+			packageReferences = (
+				B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
 			productRefGroup = B28F2FA429E33AE60087B515 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -346,6 +358,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2CA5F1329F4235E00D35A1F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B28F2F9F29E33AE60087B515 /* Sources */ = {
@@ -704,6 +737,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2CA5F1529F425B500D35A1F /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		B2CA5F1729F425B500D35A1F /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B28F2F9B29E33AE60087B515 /* Project object */;
 }
