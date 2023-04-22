@@ -46,7 +46,6 @@ class WelcomeScreenViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(signInButtonTapped))
         signUpLabel.isUserInteractionEnabled = true
         signUpLabel.addGestureRecognizer(tapGesture)
-        
         let stackViewHorizontal = UIStackView(arrangedSubviews: [newAroundHereLabel, signUpLabel])
         stackViewHorizontal.axis = .horizontal
         stackViewHorizontal.spacing = 15
@@ -66,7 +65,6 @@ class WelcomeScreenViewController: UIViewController {
             stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             stackView.leadingAnchor.constraint(greaterThanOrEqualTo: view.leadingAnchor, constant: 15),
             stackView.trailingAnchor.constraint(lessThanOrEqualTo: view.trailingAnchor, constant: -15),
-            
             stackViewHorizontal.topAnchor.constraint(equalTo: signInButton.bottomAnchor),
             stackViewHorizontal.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)
         ])
@@ -104,5 +102,3 @@ class PrimaryButton: UIButton {
         widthAnchor.constraint(equalToConstant: 240).isActive = true
     }
 }
-
-

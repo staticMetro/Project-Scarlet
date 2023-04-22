@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 import AuthenticationServices
+import GoogleSignIn
 
 class SignInScreenViewController: UIViewController, ASAuthorizationControllerDelegate {
     
-    
+    // Refer to this for Google Integration: https://swiftsenpai.com/development/google-sign-in-integration/
     // MARK: - Properties
     
     private var emailTextField: UITextField!
@@ -33,14 +34,19 @@ class SignInScreenViewController: UIViewController, ASAuthorizationControllerDel
 //        controller.presentationContextProvider = self
         controller.performRequests()
     }
+    
+    @objc func googleLoginButtonTapped() {
+        GIDSignIn.sharedInstance.signIn(withPresenting: self)
+    }
 
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupViews()
+//        Let GIDSignIn know that this view controller is presenter of the sign-in sheet
+        GIDSignIn.sharedInstance.signIn(withPresenting: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +62,7 @@ class SignInScreenViewController: UIViewController, ASAuthorizationControllerDel
         signInLabel.text = "Sign In"
         signInLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
         signInLabel.textAlignment = .center
-        signInLabel.textColor = .secondaryLabel
+        signInLabel.textColor = .systemPink
         view.addSubview(signInLabel)
 
         view.addSubview(appleLoginButton)
@@ -65,44 +71,32 @@ class SignInScreenViewController: UIViewController, ASAuthorizationControllerDel
         googleButton.setTitleColor(UIColor(named: "PrimaryColor"), for: .normal)
         view.addSubview(googleButton)
         
-//        let emailLabel = UILabel()
-//        emailLabel.text = "Email"
-//        emailLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-//        emailLabel.textColor = .secondarySystemFill
-//        emailLabel.textAlignment = .center
-//        view.addSubview(emailLabel)
-        
         emailTextField = UITextField()
         emailTextField.placeholder = "Email"
-        emailTextField.font = UIFont.systemFont(ofSize: 26, weight: .regular)
+        emailTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        emailTextField.textAlignment = .left
         emailTextField.backgroundColor = .systemBackground
-        emailTextField.layer.cornerRadius = 25
-        emailTextField.layer.shadowColor = UIColor.black.cgColor
-        emailTextField.layer.shadowOpacity = 0.08
-        emailTextField.layer.shadowRadius = 60
-        emailTextField.layer.shadowOffset = CGSize(width: 0, height: 16)
-        emailTextField.textAlignment = .center
+        emailTextField.layer.cornerRadius = 9
+        emailTextField.layer.borderWidth = 3
+//        emailTextField.layer.shadowColor = UIColor.secondaryLabel.cgColor
+//        emailTextField.layer.shadowOpacity = 0.08
+//        emailTextField.layer.shadowRadius = 60
+//        emailTextField.layer.shadowOffset = CGSize(width: 0, height: 16)
         emailTextField.keyboardType = .emailAddress
         emailTextField.autocapitalizationType = .none
         view.addSubview(emailTextField)
         
-//        let passwordLabel = UILabel()
-//        passwordLabel.text = "Password"
-//        passwordLabel.font = UIFont.systemFont(ofSize: 20, weight: .regular)
-//        passwordLabel.textColor = .secondarySystemFill
-//        passwordLabel.textAlignment = .center
-//        view.addSubview(passwordLabel)
-        
         passwordTextField = UITextField()
         passwordTextField.placeholder = "Password"
-        passwordTextField.font = UIFont.systemFont(ofSize: 26, weight: .regular)
-//        passwordTextField.backgroundColor = .gray
-        passwordTextField.layer.cornerRadius = 25
-        passwordTextField.layer.shadowColor = UIColor.black.cgColor
-        passwordTextField.layer.shadowOpacity = 0.08
-        passwordTextField.layer.shadowRadius = 60
-        passwordTextField.layer.shadowOffset = CGSize(width: 0, height: 16)
-        passwordTextField.textAlignment = .center
+        passwordTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        passwordTextField.textAlignment = .left
+        passwordTextField.backgroundColor = .secondarySystemBackground
+        passwordTextField.layer.cornerRadius = 9
+        passwordTextField.layer.borderWidth = 3
+//        passwordTextField.layer.shadowColor = UIColor.black.cgColor
+//        passwordTextField.layer.shadowOpacity = 0.08
+//        passwordTextField.layer.shadowRadius = 50
+//        passwordTextField.layer.shadowOffset = CGSize(width: 0, height: 16)
         passwordTextField.keyboardType = .default
         passwordTextField.autocapitalizationType = .none
         view.addSubview(passwordTextField)
@@ -127,18 +121,18 @@ class SignInScreenViewController: UIViewController, ASAuthorizationControllerDel
         
         signInLabel.translatesAutoresizingMaskIntoConstraints = false
         signInLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
-        signInLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        signInLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        signInLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16).isActive = true
+        signInLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16).isActive = true
         
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 50).isActive = true
-        emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 10).isActive = true
-        passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
+        passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
         
         appleLoginButton.translatesAutoresizingMaskIntoConstraints = false
         appleLoginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10).isActive = true

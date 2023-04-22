@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let periodViewController = PeriodViewController()
 //        let calendarViewController = CalendarViewController()
 
-        periodCoordinator = PeriodCoordinator(navigationController: rootNavigationController)
+        periodCoordinator = PeriodCoordinator(navigationController: rootNavigationController, dataManager: PeriodDataManager())
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = rootNavigationController
