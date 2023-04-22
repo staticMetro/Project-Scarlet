@@ -14,7 +14,7 @@ exports.getAllPeriods = async (request, response) => {
             }
         })
     } catch (err) {
-        response.status(400).json({
+        response.status(404).json({
             status: "fail",
             message: err
         })
@@ -33,7 +33,7 @@ exports.getPeriod = async (request, response) => {
             }
         })
     } catch (err) {
-        response.status(400).json({
+        response.status(404).json({
             status: "fail",
             message: err
         })
@@ -54,7 +54,7 @@ exports.updatePeriod = async (request, response) => {
             }
         })
     } catch (err) {
-        response.status(400).json({
+        response.status(404).json({
             status: "fail",
             message: err
         })
@@ -70,7 +70,7 @@ exports.deletePeriod = async (request, response) => {
             data: null
         })
     } catch (err) {
-        response.status(400).json({
+        response.status(404).json({
             status: "fail",
             message: err
         })
@@ -91,7 +91,7 @@ exports.createPeriod = async (request, response) => {
             }
         })
     } catch (err) {
-        response.status(400).json({
+        response.status(404).json({
             status: "fail",
             message: err
         })
