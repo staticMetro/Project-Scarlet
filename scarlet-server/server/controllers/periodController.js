@@ -11,23 +11,67 @@ exports.getAllPeriods = async (request, response) => {
             }
         })
     } catch (err) {
-        console.log(err);
+        response.status(400).json({
+            status: "fail",
+            message: err
+        })
     }
 }
 
-exports.getPeriod = (request, response) => {
+exports.getPeriod = async (request, response) => {
 
-    const id = request.params.id * 1;
+    try {
+        const period = await Period.findById(request.params.id);
 
-    const period = Period.find(id);
+        response.status(200).json({
+            status: "success",
+            data: {
+                period
+            }
+        })
+    } catch (err) {
+        response.status(400).json({
+            status: "fail",
+            message: err
+        })
+    }
 }
 
-exports.updatePeriod = (request, response) => {
+exports.updatePeriod = async (request, response) => {
 
+    try {
+        const period = await Period.findByIdAndUpdate(request.params.id, request.body, {
+            new: true,
+            runValidators: true});
+
+        response.status(200).json({
+            status: "success",
+            data: {
+                period
+            }
+        })
+    } catch (err) {
+        response.status(400).json({
+            status: "fail",
+            message: err
+        })
+    }
 }
 
-exports.deletePeriod = (request, response) => {
+exports.deletePeriod = async (request, response) => {
+    try {
+        await Period.findByIdAndDelete(request.params.id);
 
+        response.status(200).json({
+            status: "success",
+            data: null
+        })
+    } catch (err) {
+        response.status(400).json({
+            status: "fail",
+            message: err
+        })
+    }
 
 }
 
