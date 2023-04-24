@@ -9,6 +9,7 @@ const reviewRouter = require("./routes/reviewRoutes");
 
 const app = express();
 
+
 app.use(compression());
 app.use(cors());
 
@@ -30,8 +31,10 @@ app.get("/", function (request, response, next) {
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/periods", periodRouter);
 app.use("/api/v1/reviews", reviewRouter);
-app.use("*", function (request, response, next) {
-    console.log('error');
+app.all("*", function (request, response, next) {
+    response.status(404).json({
+        status: 'fail',
+        message: `Can not find ${request.originalUrl} on this server`
+    })
 })
-
 module.exports = app;
