@@ -20,7 +20,7 @@ exports.getPeriod = catchAsync(async (request, response, next) => {
     const period = await Period.findById(request.params.id);
 
     if (!period) {
-        return next(new AppError('No tour found with that Id'))
+        return next(new AppError('No period found with that Id'))
     }
     response.status(200).json({
         status: "success",
@@ -38,7 +38,7 @@ exports.updatePeriod = catchAsync(async (request, response, next) => {
     });
 
     if (!period) {
-        return next(new AppError('No tour found with that Id'))
+        return next(new AppError('No period found with that Id'))
     }
 
     response.status(200).json({
@@ -55,7 +55,7 @@ exports.deletePeriod = catchAsync(async (request, response, next) => {
     const period = await Period.findByIdAndDelete(request.params.id);
 
     if (!period) {
-        return next(new AppError('No tour found with that Id'))
+        return next(new AppError('No period found with that Id'))
     }
 
     response.status(200).json({
