@@ -1,8 +1,8 @@
 const Period = require('./../models/periodModel')
 const APIFeatures = require('./../utils/apiFeatures')
+const catchAsync = require('./../utils/catchAsync')
 
-exports.getAllPeriods = async (request, response) => {
-    try {
+exports.getAllPeriods = catchAsync(async (request, response, next) => {
         const features = new APIFeatures(Period.find(), request.query).filter().paginate().limitFields().sort();
         const periods = await features.query; 
 
@@ -13,17 +13,9 @@ exports.getAllPeriods = async (request, response) => {
                 periods
             }
         })
-    } catch (err) {
-        response.status(404).json({
-            status: "fail",
-            message: err
-        })
-    }
-}
+})
 
-exports.getPeriod = async (request, response) => {
-
-    try {
+exports.getPeriod = catchAsync(async (request, response, next) => {
         const period = await Period.findById(request.params.id);
 
         response.status(200).json({
@@ -32,17 +24,10 @@ exports.getPeriod = async (request, response) => {
                 period
             }
         })
-    } catch (err) {
-        response.status(404).json({
-            status: "fail",
-            message: err
-        })
-    }
-}
+})
 
-exports.updatePeriod = async (request, response) => {
+exports.updatePeriod = catchAsync(async (request, response, next) => {
 
-    try {
         const period = await Period.findByIdAndUpdate(request.params.id, request.body, {
             new: true,
             runValidators: true});
@@ -53,35 +38,22 @@ exports.updatePeriod = async (request, response) => {
                 period
             }
         })
-    } catch (err) {
-        response.status(404).json({
-            status: "fail",
-            message: err
-        })
-    }
-}
+    
+})
 
-exports.deletePeriod = async (request, response) => {
-    try {
+exports.deletePeriod = catchAsync(async (request, response, next) => {
+   
         await Period.findByIdAndDelete(request.params.id);
 
         response.status(200).json({
             status: "success",
             data: null
         })
-    } catch (err) {
-        response.status(404).json({
-            status: "fail",
-            message: err
-        })
-    }
 
-}
+})
 
-exports.createPeriod = async (request, response) => {
+exports.createPeriod = catchAsync(async (request, response, next) => {
 
-    try {
-        console.log(request);
         const newPeriod = await Period.create(request.body);
 
         response.status(201).json({
@@ -90,10 +62,5 @@ exports.createPeriod = async (request, response) => {
                 period: newPeriod
             }
         })
-    } catch (err) {
-        response.status(404).json({
-            status: "fail",
-            message: err
-        })
-    }
-}
+    
+})
