@@ -1,25 +1,18 @@
 const User = require('./../models/userModel')
 const catchAsync = require('./../utils/catchAsync')
-exports.getAllUsers = async (request, response) => {
-    try {
-        const users = await User.find();
+exports.getAllUsers = catchAsync(async (request, response, next) => {
 
-        response.status(200).json({
-            status: 'success',
-            data: {
-                users
-            }
-        })
+    const users = await User.find();
 
-    } catch (err) {
+    response.status(200).json({
+        status: 'success',
+        data: {
+            users
+        }
+    })
 
-        response.status(400).json({
-            status: "fail",
-            message: err
-        })
-    }
 
-}
+})
 
 exports.getUser = (request, response) => {
 
@@ -38,7 +31,7 @@ exports.deleteUser = (request, response) => {
 }
 
 exports.createUser = catchAsync(async (request, response) => {
-    
+
     const user = await User.create(request.body);
     console.log('here');
     response.status(201).json({
