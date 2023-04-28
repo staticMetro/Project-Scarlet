@@ -1,11 +1,13 @@
 const express = require('express');
 const periodController = require('./../controllers/periodController')
-
+const authController = require('./../controllers/authController')
 const router = express.Router();
+
+
 
 router
     .route('/')
-    .get(periodController.getAllPeriods)
+    .get(authController.protect, periodController.getAllPeriods)
     .post(periodController.createPeriod)
 
 router
