@@ -36,7 +36,7 @@
     <img src="https://user-images.githubusercontent.com/26386157/235316899-db168d51-2f49-437f-b9d4-c8a42c147ba8.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Periodic</h3>
 
   <p align="center">
     Helping women across the globe with their health!
@@ -90,11 +90,11 @@
 <img src="https://user-images.githubusercontent.com/26386157/235318360-36539232-2492-4a62-9db2-f15a9db8b2bb.png" alt="Logo" width="220" height="400">
 
 
-Introducing the Period and Ovulation iOS Application, a user-friendly mobile app designed to help women track their menstrual cycle and ovulation period. The app is tailored to meet the needs of women who want to take charge of their reproductive health and achieve their family planning goals.
+Introducing the Period and Ovulation iOS Application, Periodic,  a user-friendly mobile app designed to help women track their menstrual cycle and ovulation period. The app is tailored to meet the needs of women who want to take charge of their reproductive health and achieve their family planning goals.
 
-With the Period and Ovulation iOS app, users can log and track their menstrual cycles, including the start and end dates, flow intensity, and symptoms. The app also provides ovulation predictions based on the user's menstrual cycle data, enabling them to know the days when they are most fertile and plan accordingly. Additionally, the app offers personalized insights and health tips on reproductive health, allowing users to make informed decisions about their health and wellbeing.
+With the Periodic iOS app, users can log and track their menstrual cycles, including the start and end dates, flow intensity, and symptoms. The app also provides ovulation predictions based on the user's menstrual cycle data, enabling them to know the days when they are most fertile and plan accordingly. Additionally, the app offers personalized insights and health tips on reproductive health, allowing users to make informed decisions about their health and wellbeing.
 
-The Period and Ovulation iOS Application is a must-have for women who want to take charge of their reproductive health. With its intuitive interface and easy-to-use features, users can stay on top of their menstrual cycles and achieve their family planning goals. Whether you are trying to conceive or simply want to monitor your menstrual cycle, the Period and Ovulation iOS app is your ultimate companion. Download the app today and take the first step towards better reproductive health.
+The PPeriodic Application is a must-have for women who want to take charge of their reproductive health. With its intuitive interface and easy-to-use features, users can stay on top of their menstrual cycles and achieve their family planning goals. Whether you are trying to conceive or simply want to monitor your menstrual cycle, the Periodic iOS app is your ultimate companion. Download the app today and take the first step towards better reproductive health.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
