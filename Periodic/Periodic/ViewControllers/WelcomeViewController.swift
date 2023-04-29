@@ -12,7 +12,6 @@ class WelcomeScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
     }
 
@@ -71,7 +70,7 @@ class WelcomeScreenViewController: UIViewController {
     }
 
     @objc func signInButtonTapped() {
-        let signInScreen = SignInScreenViewController()
+        let signInScreen = LoginViewController()
         signInScreen.navigationItem.hidesBackButton = true
         navigationController?.pushViewController(signInScreen, animated: true)
     }

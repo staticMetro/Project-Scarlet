@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B26D537A29FC1A4300CD32D6 /* MenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26D537929FC1A4300CD32D6 /* MenuTabBarController.swift */; };
+		B26D537D29FC884500CD32D6 /* PostgresNIO in Frameworks */ = {isa = PBXBuildFile; productRef = B26D537C29FC884500CD32D6 /* PostgresNIO */; };
 		B28F2FA729E33AE60087B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FA629E33AE60087B515 /* AppDelegate.swift */; };
 		B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FA829E33AE60087B515 /* SceneDelegate.swift */; };
 		B28F2FAB29E33AE60087B515 /* PeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FAA29E33AE60087B515 /* PeriodViewController.swift */; };
@@ -25,9 +27,9 @@
 		B2CA5F1829F425B500D35A1F /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B2CA5F1729F425B500D35A1F /* GoogleSignInSwift */; };
 		B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */; };
 		B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */; };
-		B2DCBDEB29EB00E60098BB52 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */; };
+		B2DCBDEB29EB00E60098BB52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEA29EB00E60098BB52 /* LoginViewController.swift */; };
 		B2DCBDED29EB00E90098BB52 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */; };
-		B2DCBDF029EF6BB30098BB52 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEF29EF6BB30098BB52 /* SignInViewModel.swift */; };
+		B2DCBDF029EF6BB30098BB52 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEF29EF6BB30098BB52 /* LoginViewModel.swift */; };
 		B2DCBDF229F342DE0098BB52 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF129F342DE0098BB52 /* UserModel.swift */; };
 		B2DCBDF429F348BF0098BB52 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */; };
 		B2DCBDF629F348CB0098BB52 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */; };
@@ -53,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B26D537929FC1A4300CD32D6 /* MenuTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarController.swift; sourceTree = "<group>"; };
 		B28F2FA329E33AE60087B515 /* Periodic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Periodic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28F2FA629E33AE60087B515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28F2FA829E33AE60087B515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,10 +76,10 @@
 		B28F2FE529E3444A0087B515 /* PeriodDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodDataManager.swift; sourceTree = "<group>"; };
 		B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B2DCBDEA29EB00E60098BB52 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B2DCBDEE29EB06C00098BB52 /* Periodic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Periodic.entitlements; sourceTree = "<group>"; };
-		B2DCBDEF29EF6BB30098BB52 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		B2DCBDEF29EF6BB30098BB52 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B2DCBDF129F342DE0098BB52 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2CA5F1629F425B500D35A1F /* GoogleSignIn in Frameworks */,
+				B26D537D29FC884500CD32D6 /* PostgresNIO in Frameworks */,
 				B2CA5F1829F425B500D35A1F /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,12 +174,13 @@
 		B28F2FD929E343810087B515 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B26D537929FC1A4300CD32D6 /* MenuTabBarController.swift */,
 				B28F2FAA29E33AE60087B515 /* PeriodViewController.swift */,
 				B28F2FD629E343340087B515 /* CalendarViewController.swift */,
 				B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */,
 				B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */,
 				B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */,
-				B2DCBDEA29EB00E60098BB52 /* SignInViewController.swift */,
+				B2DCBDEA29EB00E60098BB52 /* LoginViewController.swift */,
 				B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */,
 			);
 			path = ViewControllers;
@@ -188,7 +193,7 @@
 				B28F2FDC29E343D00087B515 /* LoadingViewModel.swift */,
 				B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */,
 				B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */,
-				B2DCBDEF29EF6BB30098BB52 /* SignInViewModel.swift */,
+				B2DCBDEF29EF6BB30098BB52 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 			packageProductDependencies = (
 				B2CA5F1529F425B500D35A1F /* GoogleSignIn */,
 				B2CA5F1729F425B500D35A1F /* GoogleSignInSwift */,
+				B26D537C29FC884500CD32D6 /* PostgresNIO */,
 			);
 			productName = Periodic;
 			productReference = B28F2FA329E33AE60087B515 /* Periodic.app */;
@@ -321,6 +327,7 @@
 			mainGroup = B28F2F9A29E33AE60087B515;
 			packageReferences = (
 				B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				B26D537B29FC884500CD32D6 /* XCRemoteSwiftPackageReference "postgres-nio" */,
 			);
 			productRefGroup = B28F2FA429E33AE60087B515 /* Products */;
 			projectDirPath = "";
@@ -391,6 +398,7 @@
 				B28F2FE029E343FD0087B515 /* PeriodModel.swift in Sources */,
 				B28F2FA729E33AE60087B515 /* AppDelegate.swift in Sources */,
 				B2DCBDED29EB00E90098BB52 /* WelcomeViewController.swift in Sources */,
+				B26D537A29FC1A4300CD32D6 /* MenuTabBarController.swift in Sources */,
 				B2DCBDF629F348CB0098BB52 /* ErrorViewModel.swift in Sources */,
 				B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */,
 				B2DCBDF429F348BF0098BB52 /* ErrorViewController.swift in Sources */,
@@ -400,10 +408,10 @@
 				B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */,
 				B2E3448C29E5EEAE001D2279 /* LoadingViewController.swift in Sources */,
 				B28F2FDD29E343D00087B515 /* LoadingViewModel.swift in Sources */,
-				B2DCBDEB29EB00E60098BB52 /* SignInViewController.swift in Sources */,
+				B2DCBDEB29EB00E60098BB52 /* LoginViewController.swift in Sources */,
 				B28F2FE629E3444A0087B515 /* PeriodDataManager.swift in Sources */,
 				B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */,
-				B2DCBDF029EF6BB30098BB52 /* SignInViewModel.swift in Sources */,
+				B2DCBDF029EF6BB30098BB52 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,6 +747,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B26D537B29FC884500CD32D6 /* XCRemoteSwiftPackageReference "postgres-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/postgres-nio";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
@@ -750,6 +766,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B26D537C29FC884500CD32D6 /* PostgresNIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B26D537B29FC884500CD32D6 /* XCRemoteSwiftPackageReference "postgres-nio" */;
+			productName = PostgresNIO;
+		};
 		B2CA5F1529F425B500D35A1F /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B2CA5F1429F425B500D35A1F /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
