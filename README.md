@@ -265,5 +265,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
-[swift-version]: https://img.shields.io/badge/swift-5.1-brightgreen.svg
+[swift-version]: https://camo.githubusercontent.com/46a92c19cd603cfe5b96b7a68d8bf41b4cd138ee69c2d26a8c717edad472070e/68747470733a2f2f696d672e736869656c64732e696f2f7374617469632f76313f7374796c653d666f722d7468652d6261646765266d6573736167653d537769667426636f6c6f723d463035313338266c6f676f3d5377696674266c6f676f436f6c6f723d464646464646266c6162656c3d
 [swift-url]:https://github.com/apple/swift
