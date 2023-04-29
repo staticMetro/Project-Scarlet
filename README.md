@@ -96,7 +96,6 @@ With the Period and Ovulation iOS app, users can log and track their menstrual c
 
 The Period and Ovulation iOS Application is a must-have for women who want to take charge of their reproductive health. With its intuitive interface and easy-to-use features, users can stay on top of their menstrual cycles and achieve their family planning goals. Whether you are trying to conceive or simply want to monitor your menstrual cycle, the Period and Ovulation iOS app is your ultimate companion. Download the app today and take the first step towards better reproductive health.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
