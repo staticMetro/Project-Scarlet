@@ -40,7 +40,7 @@ class CalendarViewController: UIViewController {
     }
     
     func createCalendar() {
-           view.backgroundColor = .systemPink
+           view.backgroundColor = .systemBackground
            
            let calendarView = UICalendarView()
            calendarView.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ class CalendarViewController: UIViewController {
            calendarView.layer.cornerRadius = 12
            calendarView.backgroundColor = .systemBackground
            calendarView.availableDateRange = DateInterval(start: .now, end: .distantFuture)
-        let selection = UICalendarSelectionSingleDate(delegate: self)
+            let selection = UICalendarSelectionSingleDate(delegate: self)
            calendarView.selectionBehavior = selection
            view.addSubview(calendarView)
            NSLayoutConstraint.activate([
@@ -60,7 +60,7 @@ class CalendarViewController: UIViewController {
                calendarView.heightAnchor.constraint(equalToConstant: 430),
                calendarView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
            ])
-       }
+        }
    }
 
    extension CalendarViewController: UICalendarViewDelegate {
@@ -75,7 +75,7 @@ class CalendarViewController: UIViewController {
            if day.isMultiple(of: 10) {
                return UICalendarView.Decoration.default(color: .systemYellow, size: .large)
            }
-           if (day.distance(to: 29) <= 9) {
+           if day.distance(to: 29) <= 9 {
                return UICalendarView.Decoration.default(color: .systemCyan, size: .large)
            }
            return nil
