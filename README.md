@@ -84,8 +84,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+![Simulator Screenshot - iPhone 14 Pro - 2023-04-29 at 14 20 04](https://user-images.githubusercontent.com/26386157/235318210-a8ece6c1-19b9-4199-aa6c-a55fd0979828.png)
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 Introducing the Period and Ovulation iOS Application, a user-friendly mobile app designed to help women track their menstrual cycle and ovulation period. The app is tailored to meet the needs of women who want to take charge of their reproductive health and achieve their family planning goals.
 
@@ -209,7 +209,6 @@ Don't forget to give the project a star! Thanks again!
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
