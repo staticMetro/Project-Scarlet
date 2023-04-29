@@ -102,7 +102,7 @@ There are many great README templates available on GitHub; however, I didn't fin
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * ![Swift](https://img.shields.io/static/v1?style=for-the-badge&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
-
+* ![Heroku](https://img.shields.io/static/v1?style=for-the-badge&message=Heroku&color=430098&logo=Heroku&logoColor=FFFFFF&label=)
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
@@ -268,3 +268,5 @@ Use this space to list resources you find helpful and would like to give credit 
 [JQuery-url]: https://jquery.com 
 [Swift]: https://img.shields.io/static/v1?style=for-the-badge&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=
 [swift-url]:https://github.com/apple/swift
+[Heroku]: (https://img.shields.io/static/v1?style=for-the-badge&message=Heroku&color=430098&logo=Heroku&logoColor=FFFFFF&label=)
+
