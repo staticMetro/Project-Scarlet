@@ -39,9 +39,9 @@
   <h3 align="center">Best-README-Template</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Helping women across the globe with their health!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="Periodic"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
@@ -86,6 +86,12 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+
+Introducing the Period and Ovulation iOS Application, a user-friendly mobile app designed to help women track their menstrual cycle and ovulation period. The app is tailored to meet the needs of women who want to take charge of their reproductive health and achieve their family planning goals.
+
+With the Period and Ovulation iOS app, users can log and track their menstrual cycles, including the start and end dates, flow intensity, and symptoms. The app also provides ovulation predictions based on the user's menstrual cycle data, enabling them to know the days when they are most fertile and plan accordingly. Additionally, the app offers personalized insights and health tips on reproductive health, allowing users to make informed decisions about their health and wellbeing.
+
+The Period and Ovulation iOS Application is a must-have for women who want to take charge of their reproductive health. With its intuitive interface and easy-to-use features, users can stay on top of their menstrual cycles and achieve their family planning goals. Whether you are trying to conceive or simply want to monitor your menstrual cycle, the Period and Ovulation iOS app is your ultimate companion. Download the app today and take the first step towards better reproductive health.
 
 There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
