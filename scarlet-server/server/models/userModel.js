@@ -37,8 +37,17 @@ const userSchema = new mongoose.Schema({
             message: 'Passwords are not the same!'
         }
     },
+    role: {
+        type: String,
+        enum: ["admin", "user"],
+    },
+    active: {
+        type: Boolean,
+        default: true
+    },
     passwordChangedAt: {
-        type: Date
+        type: Date,
+        select: false
     }
     
 })
