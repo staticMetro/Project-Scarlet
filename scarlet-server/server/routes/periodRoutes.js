@@ -7,7 +7,7 @@ const router = express.Router();
 
 router
     .route('/')
-    .get(authController.protect, periodController.getAllPeriods)
+    .get(authController.protect, authController.restrictTo("admin"), periodController.getAllPeriods)
     .post(periodController.createPeriod)
 
 router
