@@ -18,7 +18,9 @@ exports.signup = catchAsync(async (request, response, next) => {
         lastName: request.body.lastName,
         email: request.body.email,
         password: request.body.password,
-        passwordConfirm: request.body.passwordConfirm
+        passwordConfirm: request.body.passwordConfirm,
+        active: request.body.active,
+        role: request.body.role
     })
 
     const token = signToken(newUser._id);
@@ -85,14 +87,12 @@ exports.protect = catchAsync(async (request, response, next) => {
     next();
 })
 
-exports.restrictTo = catchAsync(async (request, response, next) => {
+exports.restrictTo = (...roles) => {
+    return (request, response, next) => {
 
-    return (...roles) => {
-        for (const role of roles) {
-            if (role === request.user.role) {
-                return next();
-            }
+        if (!roles.includes(request.user.role)) {
+            return next(new AppError("You are not allowed to access this route", 401))
         }
-        return next(new AppError("You are not allowed to access this route", 401))
+        next();
     }
-})
+}
