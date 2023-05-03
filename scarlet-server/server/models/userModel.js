@@ -51,10 +51,12 @@ const userSchema = new mongoose.Schema({
         select: false
     },
     passwordResetToken: {
-        type: "String"
+        type: "String",
+        select: false
     },
-    passwordExpiresToken: {
-        type: Date
+    passwordResetExpires: {
+        type: Date,
+        select: false
     }
     
 })
