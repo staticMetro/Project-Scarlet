@@ -3,6 +3,8 @@ const catchAsync = require('./../utils/catchAsync')
 const { promisify } = require('util')
 const jwt = require('jsonwebtoken')
 const AppError = require('./../utils/appError')
+const sendEmail = require('./../utils/email')
+const crypto = require('crypto')
 
 const signToken = id => {
 
@@ -110,11 +112,59 @@ exports.forgotPassword = catchAsync(async (request, response, next) => {
     await user.save({ validateBeforeSave: false });
     //send to email
 
-    response.status(200).json({
-        resetToken
-    })
+    
+
+    const resetURL = `${request.protocol}://${request.get('host')}/api/v1/users/resetPassword/${resetToken}`
+
+    const options = {
+        email: user.email,
+        subject: "reset password token",
+        message: `Submit a patch request with your new password and passwordConfirm to ${resetURL}`
+    }
+
+    try {
+        await sendEmail(options);
+        response.status(200).json({
+            status: "success",
+            message: "token sent to the email"
+        })
+    } catch (err) {
+        user.passwordResetToken = undefined;
+        user.passwordResetExpires = undefined;
+        await user.save({ validateBeforeSave: false })
+        return new AppError("There was an error sending the email.. Try again", 500);
+    }
+    
 })
 
-exports.resetPassword = (request, response, next) => {
+exports.resetPassword = catchAsync(async (request, response, next) => {
 
-}
+    const { resetToken } = request.params;
+    const { password, passwordConfirm } = request.body;
+
+    if (!password) {
+        return next(new AppError("Please provide new password!", 400))
+    }
+
+    const hashedResetToken = crypto.createHash('sha256').update(resetToken).digest('hex');
+    
+    const user = await User.findOne({ passwordResetToken: hashedResetToken, passwordResetExpires: { $gte: Date.now() } });
+    
+    if (!user) {
+        return next(new AppError("Token is invalid or has expired", 400))
+    }
+
+    user.password = password;
+    user.passwordConfirm = passwordConfirm;
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save()
+
+    const token = signToken(user._id)
+
+    response.status(200).json({
+        status: "success",
+        message: "Your password has been changed",
+        token
+    })
+})
