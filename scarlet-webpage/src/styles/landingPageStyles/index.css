@@ -1,0 +1,70 @@
+/*TOP*/
+.top-container {
+    height: 500px;
+    background: linear-gradient(#ECA1B7 20%, #F5B7B1 100%);
+    position: relative; 
+    color: #13435B;
+}
+
+.top-text {
+    position: absolute;
+    padding: 20px;
+    width: 300px;
+    left: 20px;
+    top: 100px;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: left;
+}
+
+.header-wrapper {
+    padding: 20px 40px;
+    display: flex; 
+    justify-content: space-between;
+}
+
+.header-wrapper img {
+    height: 64px;
+    width: 64px;
+}
+
+/*CENTER*/
+.center {
+    height: 800px;
+    width: 100%;
+    background-color: #F9F9F9
+}
+
+/*TESTIMONIALS*/
+.testimonials {
+    background-color: #F9F9F9; 
+    height: 600px;
+}
+
+/*INFO*/
+.info {
+    background-color: #D0E6E9;
+    height: 700px;
+}
+
+/*FOOTER*/
+.footer {
+    height: 100px;
+    background: linear-gradient(to top, #FFD3C4 20%, #FFC5B0 100%);
+    padding: 40px;
+    color: #13435B;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-wrapper nav {
+    width: 400px;
+}
+

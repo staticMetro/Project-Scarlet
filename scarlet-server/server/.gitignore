@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+node_modules
+bin
+obj
+server.njsproj
+server.njsproj.user
+config.env
