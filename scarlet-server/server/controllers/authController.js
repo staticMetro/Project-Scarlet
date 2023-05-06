@@ -168,3 +168,26 @@ exports.resetPassword = catchAsync(async (request, response, next) => {
         token
     })
 })
+
+exports.updatePassword = catchAsync(async (request, response, next) => {
+
+    const { oldPassword, password, passwordConfirm } = request.body;
+    const user = await User.findById(request.user.id).select("+password");
+
+    if (!user || !(await user.correctPassword(oldPassword, user.password))) {
+        return next(new AppError("Password is incorrect", 401))
+    }
+
+    user.password = password;
+    user.passwordConfirm = passwordConfirm;
+
+    await user.save();
+
+    const token = signToken(user._id);
+
+    response.status(200).json({
+        status: 'success',
+        message: 'Your password has been updated.',
+        token
+    })
+})
