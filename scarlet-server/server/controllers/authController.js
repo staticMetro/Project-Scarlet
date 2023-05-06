@@ -13,6 +13,18 @@ const signToken = id => {
     })
 }
 
+const createAndSendToken = (response, statusCode, user) => {
+    const token = signToken(user._id);
+
+    response.status(statusCode).json({
+        status: "success",
+        data: {
+            user
+        },
+        token
+    })
+}
+
 exports.signup = catchAsync(async (request, response, next) => {
 
     const newUser = await User.create({
@@ -25,15 +37,7 @@ exports.signup = catchAsync(async (request, response, next) => {
         role: request.body.role
     })
 
-    const token = signToken(newUser._id);
-
-    response.status(200).json({
-        status: "success",
-        data: {
-            token,
-            user: newUser
-        }
-    })
+    createAndSendToken(response, 200, newUser);
 })
 
 exports.login = catchAsync(async (request, response, next) => {
@@ -51,12 +55,8 @@ exports.login = catchAsync(async (request, response, next) => {
         return next(new AppError("Incorrect email or password", 401))
     }
 
-    const token = signToken(user._id)
+    createAndSendToken(response, 200, user)
 
-    response.status(200).json({
-        status: "success",
-        token
-    })
 })
 
 
@@ -183,11 +183,5 @@ exports.updatePassword = catchAsync(async (request, response, next) => {
 
     await user.save();
 
-    const token = signToken(user._id);
-
-    response.status(200).json({
-        status: 'success',
-        message: 'Your password has been updated.',
-        token
-    })
+    createAndSendToken(response, 200, user);
 })
