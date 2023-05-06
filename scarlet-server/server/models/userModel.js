@@ -41,10 +41,12 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         enum: ["admin", "user"],
+        select: false
     },
     active: {
         type: Boolean,
-        default: true
+        default: true,
+        select: false
     },
     passwordChangedAt: {
         type: Date,
