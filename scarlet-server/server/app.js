@@ -42,9 +42,7 @@ app.use(xss());
 
 //PREVENT PARAMETER POLLUTION;
 app.use(hpp({
-    whitelist: {
-        duration: [flow, sexuallyActive, periodStart]
-    }
+    whitelist: ["flow", "sexuallyActive", "periodStart"]
 }));
 //SERVING STATIC FILES
 app.use(express.static(`${__dirname}/public`));
