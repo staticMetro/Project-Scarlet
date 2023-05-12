@@ -52,15 +52,27 @@ exports.login = catchAsync(async (request, response, next) => {
     if (!user.active || !user || !(await user.correctPassword(password, user.password))) {
         return next(new AppError("Incorrect email or password", 401))
     }
-
+    user.active = undefined
     createAndSendToken(response, 200, user)
 
+})
+
+exports.logout = catchAsync(async (request, response, next) => {
+    const token = jwt.sign({"loggedout": "loggedout"}, "Goodbye", {
+        expiresIn: "0s"})
+
+    response.status(200).json({
+        status: 'success',
+        message: 'You have been logged out',
+        token
+    })
 })
 
 
 
 exports.protect = catchAsync(async (request, response, next) => {
     //Get Token
+    console.log(request.headers.authorization)
     let token;
     if (request.headers.authorization && request.headers.authorization.startsWith('Bearer')) {
         token = request.headers.authorization.split(' ')[1];
@@ -80,7 +92,7 @@ exports.protect = catchAsync(async (request, response, next) => {
     if (!freshUser) {
         return next(new AppError("The user belonging to the token no longer exists", 401));
     }
-
+    freshUser.active = undefined;
     //Check if user changed password after the token was issued
     if (freshUser.changedPasswordAfter(decoded.iat)) {
         return next(new AppError ("User recently changed password! Please log in again.", 401))
