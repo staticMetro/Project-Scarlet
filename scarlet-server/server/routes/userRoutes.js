@@ -13,6 +13,7 @@ router.use(authController.protect);
 router.patch('/updatePassword', authController.updatePassword);
 router.patch('/updateMe', userController.updateMe);
 router.delete('/deleteMe', userController.deleteMe);
+router.post('/logout', authController.logout);
 
 router
     .route('/')
