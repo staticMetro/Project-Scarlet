@@ -33,8 +33,6 @@ exports.signup = catchAsync(async (request, response, next) => {
         email: request.body.email,
         password: request.body.password,
         passwordConfirm: request.body.passwordConfirm,
-        active: request.body.active,
-        role: request.body.role
     })
 
     createAndSendToken(response, 200, newUser);
@@ -49,9 +47,9 @@ exports.login = catchAsync(async (request, response, next) => {
         return next(new AppError("Please provide email and password!", 400))
     }
     //check if the user exists
-    const user = await User.findOne({ email }).select('+password')
+    const user = await User.findOne({ email }).select('+password').select('+active')
 
-    if (!user || !(await user.correctPassword(password, user.password))) {
+    if (!user.active || !user || !(await user.correctPassword(password, user.password))) {
         return next(new AppError("Incorrect email or password", 401))
     }
 
@@ -75,7 +73,10 @@ exports.protect = catchAsync(async (request, response, next) => {
     //Verify token
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     // Check if user still exists
-    const freshUser = await User.findById(decoded.id)
+    const freshUser = await User.findById(decoded.id).select('+active').select('+role');
+    if (!freshUser.active) {
+        return next(new AppError("This user no longer exists", 400));
+    }
     if (!freshUser) {
         return next(new AppError("The user belonging to the token no longer exists", 401));
     }
@@ -91,7 +92,6 @@ exports.protect = catchAsync(async (request, response, next) => {
 
 exports.restrictTo = (...roles) => {
     return (request, response, next) => {
-
         if (!roles.includes(request.user.role)) {
             return next(new AppError("You are not allowed to access this route", 401))
         }
