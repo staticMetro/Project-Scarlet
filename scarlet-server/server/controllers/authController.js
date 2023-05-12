@@ -35,7 +35,51 @@ exports.signup = catchAsync(async (request, response, next) => {
         passwordConfirm: request.body.passwordConfirm,
     })
 
-    createAndSendToken(response, 200, newUser);
+    const user = await User.findById(newUser._id.toString())
+
+    const verifyToken = user.verifyUser();
+    await user.save({ validateBeforeSave: false });
+
+    const verifyURL = `${request.protocol}//:${request.host}/api/v1/users/verify/${verifyToken}`
+
+    const options = {
+        email: newUser.email,
+        subject: "Verify User Email",
+        message: `Post to this link to verify your email. ${verifyURL}`
+    }
+
+    try {
+        await sendEmail(options);
+        response.status(200).json({
+            status: 'success',
+            message: 'You were sent an email'
+        })
+    } catch (err) {
+        newUser.hashedToken = undefined;
+        await user.save({ validateBeforeSave: false });
+        return next(new AppError("Something went wrong. Please try again", 500))
+    }
+})
+
+exports.verifyUser = catchAsync(async (request, response, next) => {
+
+    const verifyToken = request.params.verifyToken;
+
+    const hashedToken = crypto.createHash('sha256').update(verifyToken).digest('hex')
+
+    const newUser = await User.findOne({ hashedToken })
+
+    if (!newUser) {
+        return next(new AppError('You could not be verified', 400));
+    }
+    
+    newUser.active = true;
+    newUser.verifyResetExpires = undefined;
+    newUser.hashedToken = undefined;
+
+    await newUser.save({ validateBeforeSave: false });
+    newUser.active = undefined;
+    createAndSendToken(response, 200, newUser)
 })
 
 exports.login = catchAsync(async (request, response, next) => {
@@ -72,7 +116,7 @@ exports.logout = catchAsync(async (request, response, next) => {
 
 exports.protect = catchAsync(async (request, response, next) => {
     //Get Token
-    console.log(request.headers.authorization)
+
     let token;
     if (request.headers.authorization && request.headers.authorization.startsWith('Bearer')) {
         token = request.headers.authorization.split(' ')[1];
