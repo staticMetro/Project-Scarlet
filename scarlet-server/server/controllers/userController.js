@@ -49,17 +49,36 @@ exports.getUser = (request, response) => {
 
     const id = request.params.id * 1;
 
-    const period = Period.find(id);
+    const user = User.findById(id);
+
+    if (!user) {
+
+    }
 }
 
 exports.updateUser = (request, response) => {
 
 }
 
-exports.deleteUser = (request, response) => {
+exports.deleteUser = catchAsync(async (request, response, next) => {
 
+    await User.findByIdAndDelete(request.params.id);
 
-}
+    response.status(204).json({
+        status: "success",
+        data: null
+    })
+})
+
+exports.deleteMe = catchAsync(async (request, response, next) => {
+    
+    await User.findByIdAndUpdate(request.user.id, { active: false }, { runValidators: true, new: true })
+
+    response.status(204).json({
+        status: "success",
+        data: null
+    })
+})
 
 exports.createUser = catchAsync(async (request, response) => {
 

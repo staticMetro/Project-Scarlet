@@ -3,7 +3,7 @@ const catchAsync = require('./../utils/catchAsync')
 const { promisify } = require('util')
 const jwt = require('jsonwebtoken')
 const AppError = require('./../utils/appError')
-const sendEmail = require('./../utils/email')
+const Email = require('./../utils/email')
 const crypto = require('crypto')
 
 const signToken = id => {
@@ -33,11 +33,48 @@ exports.signup = catchAsync(async (request, response, next) => {
         email: request.body.email,
         password: request.body.password,
         passwordConfirm: request.body.passwordConfirm,
-        active: request.body.active,
-        role: request.body.role
     })
+    
+    const user = await User.findById(newUser._id.toString())
 
-    createAndSendToken(response, 200, newUser);
+    const verifyToken = user.verifyUser();
+    await user.save({ validateBeforeSave: false });
+
+    const verifyURL = `${request.protocol}//:${request.get('host')}/api/v1/users/verify/${verifyToken}`
+
+    try {
+        await new Email(user, verifyURL).sendVerification();;
+        response.status(200).json({
+            status: 'success',
+            message: 'You were sent an email'
+        })
+    } catch (err) {
+        newUser.hashedToken = undefined;
+        await user.save({ validateBeforeSave: false });
+        return next(new AppError("Something went wrong. Please try again", 500))
+    }
+
+})
+
+exports.verifyUser = catchAsync(async (request, response, next) => {
+
+    const verifyToken = request.params.verifyToken;
+
+    const hashedToken = crypto.createHash('sha256').update(verifyToken).digest('hex')
+
+    const newUser = await User.findOne({ hashedToken })
+
+    if (!newUser) {
+        return next(new AppError('You could not be verified', 400));
+    }
+    
+    newUser.active = true;
+    newUser.verifyResetExpires = undefined;
+    newUser.hashedToken = undefined;
+
+    await newUser.save({ validateBeforeSave: false });
+    newUser.active = undefined;
+    createAndSendToken(response, 200, newUser)
 })
 
 exports.login = catchAsync(async (request, response, next) => {
@@ -49,20 +86,32 @@ exports.login = catchAsync(async (request, response, next) => {
         return next(new AppError("Please provide email and password!", 400))
     }
     //check if the user exists
-    const user = await User.findOne({ email }).select('+password')
+    const user = await User.findOne({ email }).select('+password').select('+active')
 
-    if (!user || !(await user.correctPassword(password, user.password))) {
+    if (!user.active || !user || !(await user.correctPassword(password, user.password))) {
         return next(new AppError("Incorrect email or password", 401))
     }
-
+    user.active = undefined
     createAndSendToken(response, 200, user)
 
+})
+
+exports.logout = catchAsync(async (request, response, next) => {
+    const token = jwt.sign({"loggedout": "loggedout"}, "Goodbye", {
+        expiresIn: "0s"})
+
+    response.status(200).json({
+        status: 'success',
+        message: 'You have been logged out',
+        token
+    })
 })
 
 
 
 exports.protect = catchAsync(async (request, response, next) => {
     //Get Token
+
     let token;
     if (request.headers.authorization && request.headers.authorization.startsWith('Bearer')) {
         token = request.headers.authorization.split(' ')[1];
@@ -75,11 +124,14 @@ exports.protect = catchAsync(async (request, response, next) => {
     //Verify token
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     // Check if user still exists
-    const freshUser = await User.findById(decoded.id)
+    const freshUser = await User.findById(decoded.id).select('+active').select('+role');
+    if (!freshUser.active) {
+        return next(new AppError("This user no longer exists", 400));
+    }
     if (!freshUser) {
         return next(new AppError("The user belonging to the token no longer exists", 401));
     }
-
+    freshUser.active = undefined;
     //Check if user changed password after the token was issued
     if (freshUser.changedPasswordAfter(decoded.iat)) {
         return next(new AppError ("User recently changed password! Please log in again.", 401))
@@ -91,7 +143,6 @@ exports.protect = catchAsync(async (request, response, next) => {
 
 exports.restrictTo = (...roles) => {
     return (request, response, next) => {
-
         if (!roles.includes(request.user.role)) {
             return next(new AppError("You are not allowed to access this route", 401))
         }
@@ -123,7 +174,8 @@ exports.forgotPassword = catchAsync(async (request, response, next) => {
     }
 
     try {
-        await sendEmail(options);
+        //await sendEmail(options);
+        await new Email(user, resetURL).sendPasswordReset();
         response.status(200).json({
             status: "success",
             message: "token sent to the email"
