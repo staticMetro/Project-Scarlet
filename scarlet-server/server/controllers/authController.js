@@ -3,7 +3,7 @@ const catchAsync = require('./../utils/catchAsync')
 const { promisify } = require('util')
 const jwt = require('jsonwebtoken')
 const AppError = require('./../utils/appError')
-const sendEmail = require('./../utils/email')
+const Email = require('./../utils/email')
 const crypto = require('crypto')
 
 const signToken = id => {
@@ -34,22 +34,16 @@ exports.signup = catchAsync(async (request, response, next) => {
         password: request.body.password,
         passwordConfirm: request.body.passwordConfirm,
     })
-
+    
     const user = await User.findById(newUser._id.toString())
 
     const verifyToken = user.verifyUser();
     await user.save({ validateBeforeSave: false });
 
-    const verifyURL = `${request.protocol}//:${request.host}/api/v1/users/verify/${verifyToken}`
-
-    const options = {
-        email: newUser.email,
-        subject: "Verify User Email",
-        message: `Post to this link to verify your email. ${verifyURL}`
-    }
+    const verifyURL = `${request.protocol}//:${request.get('host')}/api/v1/users/verify/${verifyToken}`
 
     try {
-        await sendEmail(options);
+        await new Email(user, verifyURL).sendVerification();;
         response.status(200).json({
             status: 'success',
             message: 'You were sent an email'
@@ -59,6 +53,7 @@ exports.signup = catchAsync(async (request, response, next) => {
         await user.save({ validateBeforeSave: false });
         return next(new AppError("Something went wrong. Please try again", 500))
     }
+    createAndSendToken(response, 200, newUser);
 })
 
 exports.verifyUser = catchAsync(async (request, response, next) => {
@@ -179,7 +174,8 @@ exports.forgotPassword = catchAsync(async (request, response, next) => {
     }
 
     try {
-        await sendEmail(options);
+        //await sendEmail(options);
+        await new Email(user, resetURL).sendPasswordReset();
         response.status(200).json({
             status: "success",
             message: "token sent to the email"
