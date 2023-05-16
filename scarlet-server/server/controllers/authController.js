@@ -53,7 +53,7 @@ exports.signup = catchAsync(async (request, response, next) => {
         await user.save({ validateBeforeSave: false });
         return next(new AppError("Something went wrong. Please try again", 500))
     }
-    createAndSendToken(response, 200, newUser);
+
 })
 
 exports.verifyUser = catchAsync(async (request, response, next) => {
