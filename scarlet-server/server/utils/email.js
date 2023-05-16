@@ -51,7 +51,7 @@ module.exports = class Email {
                 from: this.from,
                 to: this.to,
                 subject,
-                text: convert(html, options),
+                text: convert(html, replacements),
                 html: htmlToSend
             }
 
