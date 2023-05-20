@@ -32,16 +32,16 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="">
+    <img src="https://user-images.githubusercontent.com/26386157/235316899-db168d51-2f49-437f-b9d4-c8a42c147ba8.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Periodic</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    Helping women across the globe with their health!
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="Periodic"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
@@ -84,29 +84,33 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+<!--
+![Simulator Screenshot - iPhone 14 Pro - 2023-04-29 at 14 20 04](https://user-images.githubusercontent.com/26386157/235318210-a8ece6c1-19b9-4199-aa6c-a55fd0979828.png)
+-->
+<img src="https://user-images.githubusercontent.com/26386157/235318360-36539232-2492-4a62-9db2-f15a9db8b2bb.png" alt="Logo" width="220" height="400">
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+Introducing the Period and Ovulation iOS Application, Periodic,  a user-friendly mobile app designed to help women track their menstrual cycle and ovulation period. The app is tailored to meet the needs of women who want to take charge of their reproductive health and achieve their family planning goals.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+With the Periodic iOS app, users can log and track their menstrual cycles, including the start and end dates, flow intensity, and symptoms. The app also provides ovulation predictions based on the user's menstrual cycle data, enabling them to know the days when they are most fertile and plan accordingly. Additionally, the app offers personalized insights and health tips on reproductive health, allowing users to make informed decisions about their health and wellbeing.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+The PPeriodic Application is a must-have for women who want to take charge of their reproductive health. With its intuitive interface and easy-to-use features, users can stay on top of their menstrual cycles and achieve their family planning goals. Whether you are trying to conceive or simply want to monitor your menstrual cycle, the Periodic iOS app is your ultimate companion. Download the app today and take the first step towards better reproductive health.
 
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
+* ![Swift](https://img.shields.io/static/v1?style=for-the-badge&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=)
+* ![iOS](https://img.shields.io/static/v1?style=for-the-badge&message=iOS&color=000000&logo=iOS&logoColor=FFFFFF&label=)
+* ![Heroku](https://img.shields.io/static/v1?style=for-the-badge&message=Heroku&color=430098&logo=Heroku&logoColor=FFFFFF&label=)
+* ![MongoDB](https://img.shields.io/static/v1?style=for-the-badge&message=MongoDB&color=47A248&logo=MongoDB&logoColor=FFFFFF&label=)
+* ![PostgreSQL](https://img.shields.io/static/v1?style=for-the-badge&message=PostgreSQL&color=4169E1&logo=PostgreSQL&logoColor=FFFFFF&label=)
+* ![JSON](https://img.shields.io/static/v1?style=for-the-badge&message=JSON&color=000000&logo=JSON&logoColor=FFFFFF&label=)
+* ![JSON Web Tokens](https://img.shields.io/static/v1?style=for-the-badge&message=JSON+Web+Tokens&color=000000&logo=JSON+Web+Tokens&logoColor=FFFFFF&label=)
+* ![Material UI](https://img.shields.io/static/v1?style=for-the-badge&message=Material+Design&color=757575&logo=Material+Design&logoColor=FFFFFF&label=)
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
@@ -209,7 +213,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- CONTACT -->
 ## Contact
 
@@ -270,3 +273,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[Swift]: https://img.shields.io/static/v1?style=for-the-badge&message=Swift&color=F05138&logo=Swift&logoColor=FFFFFF&label=
+[swift-url]:https://github.com/apple/swift
+[Heroku]: (https://img.shields.io/static/v1?style=for-the-badge&message=Heroku&color=430098&logo=Heroku&logoColor=FFFFFF&label=)
+
