@@ -35,6 +35,7 @@
 		B2DCBDF629F348CB0098BB52 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */; };
 		B2E3448C29E5EEAE001D2279 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */; };
 		B2E3449029E5EF4D001D2279 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E3448F29E5EF4D001D2279 /* Extensions.swift */; };
+		B2FFA3672A05D67F0014A913 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFA3662A05D67F0014A913 /* WelcomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		B2E3448F29E5EF4D001D2279 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B2FFA3662A05D67F0014A913 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */,
 				B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */,
 				B2DCBDEF29EF6BB30098BB52 /* LoginViewModel.swift */,
+				B2FFA3662A05D67F0014A913 /* WelcomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -402,6 +405,7 @@
 				B2DCBDF629F348CB0098BB52 /* ErrorViewModel.swift in Sources */,
 				B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */,
 				B2DCBDF429F348BF0098BB52 /* ErrorViewController.swift in Sources */,
+				B2FFA3672A05D67F0014A913 /* WelcomeViewModel.swift in Sources */,
 				B28F2FDB29E343A40087B515 /* CalendarViewModel.swift in Sources */,
 				B2DCBDF229F342DE0098BB52 /* UserModel.swift in Sources */,
 				B2E3449029E5EF4D001D2279 /* Extensions.swift in Sources */,
