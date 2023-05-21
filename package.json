@@ -38,7 +38,9 @@
     "xss-clean": "^0.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run build && (cd server && nodemon server.js)",
+    "start-client": "react-scripts start",
+    "start-server": "cd server && nodemon server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
