@@ -34,7 +34,7 @@ exports.signup = catchAsync(async (request, response, next) => {
         password: request.body.password,
         passwordConfirm: request.body.passwordConfirm,
     })
-    
+
     const user = await User.findById(newUser._id.toString())
 
     const verifyToken = user.verifyUser();
@@ -67,7 +67,7 @@ exports.verifyUser = catchAsync(async (request, response, next) => {
     if (!newUser) {
         return next(new AppError('You could not be verified', 400));
     }
-    
+
     newUser.active = true;
     newUser.verifyResetExpires = undefined;
     newUser.hashedToken = undefined;
@@ -97,8 +97,9 @@ exports.login = catchAsync(async (request, response, next) => {
 })
 
 exports.logout = catchAsync(async (request, response, next) => {
-    const token = jwt.sign({"loggedout": "loggedout"}, "Goodbye", {
-        expiresIn: "0s"})
+    const token = jwt.sign({ "loggedout": "loggedout" }, "Goodbye", {
+        expiresIn: "0s"
+    })
 
     response.status(200).json({
         status: 'success',
@@ -116,7 +117,7 @@ exports.protect = catchAsync(async (request, response, next) => {
     if (request.headers.authorization && request.headers.authorization.startsWith('Bearer')) {
         token = request.headers.authorization.split(' ')[1];
     }
-    
+
     if (!token) {
         return next(new AppError('You are not logged in', 401));
     }
@@ -134,9 +135,9 @@ exports.protect = catchAsync(async (request, response, next) => {
     freshUser.active = undefined;
     //Check if user changed password after the token was issued
     if (freshUser.changedPasswordAfter(decoded.iat)) {
-        return next(new AppError ("User recently changed password! Please log in again.", 401))
+        return next(new AppError("User recently changed password! Please log in again.", 401))
     }
-    
+
     request.user = freshUser;
     next();
 })
@@ -163,7 +164,7 @@ exports.forgotPassword = catchAsync(async (request, response, next) => {
     await user.save({ validateBeforeSave: false });
     //send to email
 
-    
+
 
     const resetURL = `${request.protocol}://${request.get('host')}/api/v1/users/resetPassword/${resetToken}`
 
@@ -186,7 +187,7 @@ exports.forgotPassword = catchAsync(async (request, response, next) => {
         await user.save({ validateBeforeSave: false })
         return new AppError("There was an error sending the email.. Try again", 500);
     }
-    
+
 })
 
 exports.resetPassword = catchAsync(async (request, response, next) => {
@@ -199,9 +200,9 @@ exports.resetPassword = catchAsync(async (request, response, next) => {
     }
 
     const hashedResetToken = crypto.createHash('sha256').update(resetToken).digest('hex');
-    
+
     const user = await User.findOne({ passwordResetToken: hashedResetToken, passwordResetExpires: { $gte: Date.now() } });
-    
+
     if (!user) {
         return next(new AppError("Token is invalid or has expired", 400))
     }

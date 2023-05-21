@@ -1,13 +1,13 @@
 const express = require('express');
 const periodController = require('./../controllers/periodController')
 const authController = require('./../controllers/authController')
-const router = express.Router();
+const router = express.Router({ mergeParams: true });
 
 
 
 router
     .route('/')
-    .get(authController.protect, authController.restrictTo("admin"), periodController.getAllPeriods)
+    .get(authController.protect, periodController.getAllPeriods)
     .post(periodController.createPeriod)
 
 router
