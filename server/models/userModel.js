@@ -41,10 +41,17 @@ const userSchema = new mongoose.Schema({
     role: {
         type: String,
         enum: ["admin", "user"],
+        select: false,
+        default: "user"
     },
     active: {
         type: Boolean,
-        default: true
+        default: false,
+        select: false
+    },
+    hashedToken: {
+        type: "String",
+        select: false
     },
     passwordChangedAt: {
         type: Date,
@@ -98,14 +105,24 @@ userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
     return false;
 }
 
+userSchema.methods.verifyUser = function (next) {
+    const verifyToken = crypto.randomBytes(32).toString('hex')
+    this.hashedToken = crypto.createHash('sha256').update(verifyToken).digest('hex');
+    this.verifyResetExpires = Date.now() + 10 * 60 * 1000;
+    return verifyToken
+}
+
 userSchema.methods.createPasswordResetToken = function () {
     const resetToken = crypto.randomBytes(32).toString('hex');
-
     this.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex');
-
     this.passwordResetExpires = Date.now() + 10 * 60 * 1000
     return resetToken;
 }
+
+//userSchema.pre(/^find/, function (next) {
+//    /*this.find(active: {$ne: false});*/
+//    next();
+//})
 
 const User = mongoose.model("User", userSchema);
 
