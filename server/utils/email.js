@@ -9,7 +9,7 @@ module.exports = class Email {
         this.url = url;
         this.firstName = user.firstName;
         this.lastName = user.lastName;
-        this.from = `<Huvon Hutchinson-Goodridge ${process.env.EMAIL_FROM}>`
+        this.from = process.env.EMAIL_FROM;
         this.to = user.email;
     }
 
@@ -25,7 +25,14 @@ module.exports = class Email {
             })
 
         } else if (process.env.NODE_ENV === "production") {
-
+            return nodemailer.createTransport({
+                host: "smtp.sendgrid.net",
+                port: 465,
+                auth: {
+                    user: process.env.SENDGRID_USERNAME,
+                    pass: process.env.SENDGRID_PASSWORD
+                }
+            })
         }
     }
 
@@ -35,7 +42,7 @@ module.exports = class Email {
         const sendHTML = this.createBindedFunc(subject)
         fs.readFile(path, { encoding: 'utf-8' }, sendHTML)
 
-        
+
     }
 
     createBindedFunc = (subject) => {
@@ -54,7 +61,6 @@ module.exports = class Email {
                 text: convert(html, replacements),
                 html: htmlToSend
             }
-
             await this.createTransporter().sendMail(mailOptions);
         }
         const bindedFunc = anon.bind(this);
@@ -66,7 +72,7 @@ module.exports = class Email {
     }
 
     async sendVerification() {
-        await this.send('welcome', 'Please Verify Your Email')
+        await this.send('verifyUser', 'Please Verify Your Email')
     }
 
     async sendPasswordReset() {

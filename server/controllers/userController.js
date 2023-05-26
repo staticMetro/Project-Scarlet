@@ -1,6 +1,7 @@
 const User = require('./../models/userModel')
 const catchAsync = require('./../utils/catchAsync')
 const AppError = require('./../utils/appError');
+const factory = require('./handlerFactory')
 
 const filteredObj = (obj, ...allowedFields) => {
 
@@ -13,20 +14,7 @@ const filteredObj = (obj, ...allowedFields) => {
     return obj;
 }
 
-exports.getAllUsers = catchAsync(async (request, response, next) => {
-
-    const users = await User.find();
-
-    response.status(200).json({
-        status: 'success',
-        data: {
-            users
-        }
-    })
-})
-
 exports.updateMe = catchAsync(async (request, response, next) => {
-    console.log('here')
     if (request.body.password || request.body.passwordConfirm) {
         return next(new AppError('This route is not for updating your password', 400));
     }
@@ -45,33 +33,22 @@ exports.updateMe = catchAsync(async (request, response, next) => {
     })
 })
 
-exports.getUser = (request, response) => {
+exports._me = catchAsync(async (request, response, next) => {
 
-    const id = request.params.id * 1;
+    const id = request.user._id;
 
-    const user = User.findById(id);
+    const user = await User.findById(id).select("+active").select("+role");
 
-    if (!user) {
-
-    }
-}
-
-exports.updateUser = (request, response) => {
-
-}
-
-exports.deleteUser = catchAsync(async (request, response, next) => {
-
-    await User.findByIdAndDelete(request.params.id);
-
-    response.status(204).json({
+    response.status(200).json({
         status: "success",
-        data: null
+        data: {
+            user
+        }
     })
 })
 
 exports.deleteMe = catchAsync(async (request, response, next) => {
-    
+
     await User.findByIdAndUpdate(request.user.id, { active: false }, { runValidators: true, new: true })
 
     response.status(204).json({
@@ -80,14 +57,7 @@ exports.deleteMe = catchAsync(async (request, response, next) => {
     })
 })
 
-exports.createUser = catchAsync(async (request, response) => {
-
-    const user = await User.create(request.body);
-    console.log('here');
-    response.status(201).json({
-        status: "success",
-        data: {
-            user
-        }
-    })
-})
+exports.deleteUser = factory.deleteOne(User)
+exports.updateUser = factory.updateOne(User);
+exports.getUser = factory.getOne(User)
+exports.getAllUsers = factory.getAll(User);

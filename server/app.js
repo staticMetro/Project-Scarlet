@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const compression = require('compression')
 const cors = require('cors')
 const morgan = require('morgan')
@@ -12,10 +13,10 @@ const globalErrorHandler = require('./controllers/errorController')
 const AppError = require('./utils/appError')
 const userRouter = require("./routes/userRoutes")
 const periodRouter = require("./routes/periodRoutes");
-const reviewRouter = require("./routes/reviewRoutes");
-
+const viewRouter = require("./routes/viewRoutes");
 const app = express();
 
+app.set('views', path.join(__dirname, 'views'));
 //HTTP SECURITY HEADERS
 app.use(helmet());
 
@@ -44,24 +45,21 @@ app.use(xss());
 app.use(hpp({
     whitelist: ["flow", "sexuallyActive", "periodStart"]
 }));
-//SERVING STATIC FILES
-app.use(express.static(`${__dirname}/public`));
 
+//SERVING STATIC FILES
+app.use(express.static(path.join(__dirname, "..", "build")));
+app.use(express.static(`${__dirname}/public`));
+app.use(express.static(path.join(__dirname, "..", "build", "index.html")))
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
 
 
 
-app.get("/", function (request, response, next) {
-    response.status(200).json({
-        status: "success",
-        message: "You have made a get request"
-    })
-})
+app.use('/', viewRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/periods", periodRouter);
-app.use("/api/v1/reviews", reviewRouter);
+
 app.all("*", function (request, response, next) {
     next(new AppError(`Can not find ${request.originalUrl} on this server`))
 })
