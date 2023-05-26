@@ -15,16 +15,13 @@ protocol Coordinator {
 class PeriodCoordinator: Coordinator {
     private let dataManager: PeriodDataManager
     private let navigationController: UINavigationController
-    
     init(navigationController: UINavigationController, dataManager: PeriodDataManager) {
         self.navigationController = navigationController
         self.dataManager = dataManager
     }
     func start() {
+//        coordinateToWelcomeView()
         coordinateToLoginView()
-//        let username = "tshibuaya.aimeric@gmail.com"
-//        let password = "12345678"
-//        login(username: username, password: password)
     }
     func login(username: String, password: String) {
         dataManager.login(username: username, password: password) { [self] success, message in
@@ -32,12 +29,29 @@ class PeriodCoordinator: Coordinator {
                 DispatchQueue.main.async {
                     // Navigate to the home screen
                     self.coordinateToHomeView()
-    //                viewController.viewModel = viewModel
-                    print("Sucesss, you're a god")
+                    print(message)
                 }
             } else {
                 DispatchQueue.main.async { [self] in
                     // Navigate to the login screen with an error message
+                    print(message)
+                    coordinateToErrorView()
+                }
+            }
+        }
+    }
+    func register(firstName: String, lastName: String, email: String, password: String, passwordConfirm: String) {
+        dataManager.signUp(firstName, lastName, email, password, passwordConfirm) { [self]  success, message in
+            if success {
+                DispatchQueue.main.async {
+                    // Navigate to the home screen
+                    self.coordinateToHomeView()
+                    print(message)
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    // Navigate to the login screen with an error message
+                    print(message)
                     coordinateToErrorView()
                 }
             }

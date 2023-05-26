@@ -9,35 +9,22 @@ import Foundation
 import UIKit
 
 protocol LoginViewModelProtocol {
-    func login(username: String, password: String, completion: @escaping (Bool, String) -> Void)
     func loginButtonTapped(username: String, password: String)
+    func registerButtonTapped(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String)
 }
 
 struct LoginViewModel: LoginViewModelProtocol {
     private let dataManager: PeriodDataManaging
-    let coordinator: PeriodCoordinator
-
+    private let coordinator: PeriodCoordinator
 
     init(_ dataManager: PeriodDataManager, _ coordinator: PeriodCoordinator) {
         self.dataManager = dataManager
         self.coordinator = coordinator
-
     }
-        func loginButtonTapped(username: String, password: String) {
-            coordinator.login(username: username, password: password)
-        }
-    func login(username: String, password: String, completion: @escaping (Bool, String) -> Void) {
-        dataManager.login(username: username, password: password) { [self] success, _ in
-            if success {
-                DispatchQueue.main.async {
-                    // Navigate to the home screen
-                    print("Sucesss, you're a god")
-                }
-            } else {
-                DispatchQueue.main.async { [self] in
-                    // Navigate to the screen with an error message
-                }
-            }
-        }
+    func loginButtonTapped(username: String, password: String) {
+        coordinator.login(username: username, password: password)
+    }
+    func registerButtonTapped(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String) {
+        coordinator.register(firstName: firstName, lastName: lastName, email: email, password: password, passwordConfirm: passwordConfirm)
     }
 }

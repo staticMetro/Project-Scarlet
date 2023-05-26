@@ -36,8 +36,10 @@ struct PeriodDataManager: PeriodDataManaging {
             static let apiURLVerifyUser = "http://127.0.0.1:5000/api/v1/users/verify/ce2a98738290fd5282084351c2705cae0a2fc9fd23f243f55c56f5a647c90b54"
             static let apiURLSignUp = "\(baseURL)users/signup"
         }
-        struct Token{
+        struct Token {
+            // swiftlint:disable line_length
             static let jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTE5YTYwMGZkMzRiZjY5NTAyZThkZiIsImlhdCI6MTY4MzI0NTUyNSwiZXhwIjoxNjg1MDU5OTI1fQ.ztGByLJxIII0ztVh66OpWMRIjgCXw_quzKE9fUVGhk0"
+            // swiftlint:enable line_length
         }
         // swiftlint:enable nesting
     }
@@ -148,7 +150,7 @@ struct PeriodDataManager: PeriodDataManaging {
         }
         task.resume()
     }
-    func signUp(_ email: String, _ firstName: String,_ lastName: String, _ password: String, _ passwordConfirm: String, completion: @escaping (Bool, String) -> Void) {
+    func signUp(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String, completion: @escaping (Bool, String) -> Void) {
         guard let url = URL(string: Constant.URL.apiURLLogin) else {
             completion(false, "error")
             return
