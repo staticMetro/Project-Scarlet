@@ -46,10 +46,7 @@ class ErrorViewController: UIViewController {
         errorImageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
         tryAgainButton.translatesAutoresizingMaskIntoConstraints = false
-
         errorImageView.contentMode = .scaleAspectFit
-        var aspectRatio: CGFloat = 0.0
-        aspectRatio = (errorImageView.image?.size.width ?? 0.0) / (errorImageView.image?.size.height ?? 0.0)
 
         constraints.append(errorImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor))
         // swiftlint:disable all

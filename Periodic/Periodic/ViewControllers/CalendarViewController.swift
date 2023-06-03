@@ -23,7 +23,6 @@ class CalendarViewController: UIViewController {
         setUpLabel(periodLabel, "OVULATION")
         setUpConstraints()
     }
-    
     private func setUpConstraints() {
         view.addSubview(periodLabel)
         NSLayoutConstraint.activate([
@@ -32,16 +31,13 @@ class CalendarViewController: UIViewController {
             periodLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor, constant: -40),
         ])
     }
-    
     private func setUpLabel(_ label: UILabel, _ labelName: String) {
         label.text = labelName
         label.textColor = .black
         label.numberOfLines = 1
     }
-    
     func createCalendar() {
            view.backgroundColor = .systemBackground
-           
            let calendarView = UICalendarView()
            calendarView.translatesAutoresizingMaskIntoConstraints = false
            calendarView.calendar = .current

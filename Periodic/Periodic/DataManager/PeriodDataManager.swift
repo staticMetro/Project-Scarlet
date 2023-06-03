@@ -16,146 +16,178 @@ enum PeriodDataManagingResponseStatus<T> {
     case failed(NSError)
     case success(T)
 }
-//port 2761
+// port 2761
 
 protocol PeriodDataManaging {
-    func fetchUserInfo(completion: @escaping (PeriodDataManagingResponseStatus<[UserModel]>) -> Void)
-    func testAPICall()
-    func fetchUserPeriodInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void)
+    func login(username: String, password: String, completion: @escaping (Bool, String) -> Void)
 }
 
 struct PeriodDataManager: PeriodDataManaging {
     private struct Constant {
         // swiftlint:disable nesting
         struct URL {
-            static let apiURLStringUsers = "https://scarlet-server.herokuapp.com/api/v1/users"
-            static let apiURLStringUserPeriod = "https://scarlet-server.herokuapp.com/api/v1/period"
-            static let apiURLStringUserReviews = "https://scarlet-server.herokuapp.com/api/v1/reviews"
-
+            static let baseURL = "https://scarlet-server.herokuapp.com/api/v1/"
+            static let apiURLStringUsers = "\(baseURL)users"
+            static let apiURLStringUserPeriod = "\(baseURL)period"
+            static let apiURLStringUserReviews = "\(baseURL)reviews"
+            static let apiURLLogin = "\(baseURL)users/login"
+            static let apiURLForgotPassword = "\(baseURL)users/forgotPassword"
+            static let apiURLResetPassword = "\(baseURL)users/resetPassword/d8e43977e7ed4698cfcc5ca995777016cf0ee3e016fab5938fa6e2ff2e5d414f"
+            static let apiURLVerifyUser = "http://127.0.0.1:5000/api/v1/users/verify/ce2a98738290fd5282084351c2705cae0a2fc9fd23f243f55c56f5a647c90b54"
+            static let apiURLSignUp = "\(baseURL)users/signup"
+        }
+        struct Token {
+            // swiftlint:disable line_length
+            static let jwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTE5YTYwMGZkMzRiZjY5NTAyZThkZiIsImlhdCI6MTY4MzI0NTUyNSwiZXhwIjoxNjg1MDU5OTI1fQ.ztGByLJxIII0ztVh66OpWMRIjgCXw_quzKE9fUVGhk0"
+            // swiftlint:enable line_length
         }
         // swiftlint:enable nesting
     }
-    func testAPICall() {
-        guard let url = URL(string: Constant.URL.apiURLStringUsers) else {
-            print("Invalid URL")
-            return
-        }
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            // Handle errors
-            guard error == nil else {
-                print("Error: \(error!)")
-                return
-            }
-            // Handle response
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                print("Invalid response")
-                return
-            }
-            // Handle data
-            guard let data = data else {
-                print("No data returned")
-                return
-            }
-            // Convert data to JSON
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print("JSON response: \(json)")
-            } catch let error {
-                print("Error parsing JSON: \(error)")
-            }
-        }
-
-        task.resume()
-
-    }
-    func testAPIPostToUSER() {
-        guard let url = URL(string: Constant.URL.apiURLStringUsers) else {
-            print("Invalid URL")
+    func login(username: String, password: String, completion: @escaping (Bool, String) -> Void) {
+        guard let url = URL(string: Constant.URL.apiURLLogin) else {
+            completion(false, "error")
             return
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        var v1ApiToken = ""
-        // Model to Data Convert (JSONEncoder() + Encodable)
-        request.allHTTPHeaderFields = [
-                    "Content-Type" : "application/json",
-                    "Accept" : "application/json",
-                    "Authentication" : "Bearer \(v1ApiToken)",
-                    "cache-control" : "no-cache"
+        let params: [String: String] = [
+            "email": username,
+            "password": password
         ]
-        
 
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            // Handle errors
-            guard error == nil else {
-                print("Error: \(error!)")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.allHTTPHeaderFields = [
+                    "Content-Type": "application/json",
+                    "Authentication": "Bearer \(Constant.Token.jwt)",
+                    "cache-control": "no-cache"
+        ]
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil, let data = data,
+                    let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(false, "error")
                 return
             }
-            // Handle response
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                print("Invalid response")
-                return
-            }
-            // Handle data
-            guard let data = data else {
-                print("No data returned")
-                return
-            }
-            // Convert data to JSON
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print("JSON response: \(json)")
-            } catch let error {
-                print("Error parsing JSON: \(error)")
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            let successString = json?["status"] as? String ?? ""
+            let success = successString.lowercased() == "success"
+            if success {
+                completion(true, successString.lowercased())
+            } else {
+                print("error")
+                completion(false, "error")
             }
         }
-
         task.resume()
-
     }
-    
-
-    func fetchUserInfo(completion: @escaping (PeriodDataManagingResponseStatus<[UserModel]>) -> Void) {
-        fetchData(urlString: Constant.URL.apiURLStringUsers,
-                  modelType: UserModel.self,
-                  completion: { completion($0) })
-    }
-    func fetchUserPeriodInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void){
-        fetchData(urlString: Constant.URL.apiURLStringUserPeriod,
-                  modelType: PeriodModel.self,
-                  completion: { completion($0) })
-    }
-    private func fetchData<T: Decodable>(urlString: String,
-                                         modelType: T.Type,
-                                         completion: @escaping (PeriodDataManagingResponseStatus<[T]>) -> Void) {
-        guard let urlLink = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
-        else {
-            completion(.failed(NSError(domain: "Error: cannot create URL", code: 10001)))
+    func forgotPassword(_ email: String, completion: @escaping (Bool, String) -> Void) {
+        guard let url = URL(string: Constant.URL.apiURLLogin) else {
+            completion(false, "error")
             return
         }
-        guard let url = URL(string: urlLink) else {
-            completion(.failed(NSError(domain: "Error: cannot create URL", code: 10001)))
-            return
-        }
-        completion(.loading)
-        URLSession.shared.dataTask(with: url, completionHandler: {(responseData, _, error) in
-            guard let rawData = responseData else {
-                completion(.failed(NSError(domain:
-                                            "Error: Something went wrong, please try it again later", code: 10002)))
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let params: [String: String] = [
+            "email": email
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.allHTTPHeaderFields = [
+                    "Content-Type": "application/json",
+                    "Authentication": "Bearer \(Constant.Token.jwt)",
+                    "cache-control": "no-cache"
+        ]
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil, let data = data,
+                    let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(false, "error")
                 return
             }
-            do {
-                let data = try JSONDecoder().decode([T].self, from: rawData)
-                completion(.success(data))
-            } catch let error {
-                completion(.failed(NSError(domain:
-                                        "Error: Something went wrong, please try it again later. Message: \(error.localizedDescription)",
-                                           code: 10002)))
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            let successString = json?["status"] as? String ?? ""
+            let success = successString.lowercased() == "success"
+            if success {
+                completion(true, successString.lowercased())
+            } else {
+                print("error")
+                completion(false, "error")
             }
-        }).resume()
+        }
+        task.resume()
+    }
+    func resetPassword(_ password: String, _ passwordConfirm: String, completion: @escaping (Bool, String) -> Void) {
+        guard let url = URL(string: Constant.URL.apiURLLogin) else {
+            completion(false, "error")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        let params: [String: String] = [
+            "password": password,
+            "passwordConfirm": passwordConfirm
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.allHTTPHeaderFields = [
+                    "Content-Type": "application/json",
+                    "Authentication": "Bearer \(Constant.Token.jwt)",
+                    "cache-control": "no-cache"
+        ]
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil, let data = data,
+                    let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(false, "error")
+                return
+            }
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            let successString = json?["status"] as? String ?? ""
+            let success = successString.lowercased() == "success"
+            if success {
+                completion(true, successString.lowercased())
+            } else {
+                print("error")
+                completion(false, "error")
+            }
+        }
+        task.resume()
+    }
+    func signUp(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String, completion: @escaping (Bool, String) -> Void) {
+        guard let url = URL(string: Constant.URL.apiURLLogin) else {
+            completion(false, "error")
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let params: [String: String] = [
+            "email": email,
+            "firstName": firstName,
+            "lastName": lastName,
+            "password": password,
+            "passwordConfirm": passwordConfirm
+        ]
+
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.allHTTPHeaderFields = [
+                    "Content-Type": "application/json",
+                    "Authentication": "Bearer \(Constant.Token.jwt)",
+                    "cache-control": "no-cache"
+        ]
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil, let data = data,
+                    let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(false, "error")
+                return
+            }
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            let successString = json?["status"] as? String ?? ""
+            let success = successString.lowercased() == "success"
+            if success {
+                completion(true, successString.lowercased())
+            } else {
+                print("error")
+                completion(false, "error")
+            }
+        } 
+        task.resume()
     }
     private func postUserData <T: Decodable>(urlString: String, modelType: T.Type,
                                              completion: @escaping (PeriodDataManagingResponseStatus<[T]>) -> Void) {

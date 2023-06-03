@@ -13,65 +13,67 @@ protocol Coordinator {
 }
 
 class PeriodCoordinator: Coordinator {
-    private let dataManager: PeriodDataManaging
+    private let dataManager: PeriodDataManager
     private let navigationController: UINavigationController
-    init(navigationController: UINavigationController, dataManager: PeriodDataManaging) {
+    init(navigationController: UINavigationController, dataManager: PeriodDataManager) {
         self.navigationController = navigationController
         self.dataManager = dataManager
     }
     func start() {
-//        coordinateToHomeView()
-        
-//        let result = fetchData()
-//        switch result {
-//        case .success:
-//            print("sucess")
-//            DispatchQueue.main.async { [weak self] in
-//                self?.coordinateToProfileView()
-//        }
-//        case .timedOut:
-//            print("error")
-//            DispatchQueue.main.async { [weak self] in
-//                self?.coordinateToErrorView()
-//        }
-//
-//        }
-        dataManager.testAPICall()
-        
+//        coordinateToWelcomeView()
+        coordinateToLoginView()
     }
-    func fetchData() -> DispatchTimeoutResult {
-        let group = DispatchGroup()
-        group.enter()
-        dataManager.fetchUserInfo { [weak self] status in
-            switch status {
-            case .initial, .loading:
-                self?.coordinateToLoadingView()
-            case .success(let _):
-                group.leave()
-                print("success")
-//                self?.UserModel = userModel
-            case .failed:
-                break
+    func login(username: String, password: String) {
+        dataManager.login(username: username, password: password) { [self] success, message in
+            if success {
+                DispatchQueue.main.async {
+                    // Navigate to the home screen
+                    self.coordinateToHomeView()
+                    print(message)
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    // Navigate to the login screen with an error message
+                    print(message)
+                    coordinateToErrorView()
+                }
             }
         }
-        return group.wait(timeout: DispatchTime.now() + 10)
     }
-//            group.enter()
-//            dataManager.fetchUserPeriodInfo() { [weak self] status in
-//                switch status {
-//                case .initial, .loading:
-//                    self?.coordinateToLoadingView()
-//                case .success(let period):
-//                    group.leave()
-//                    period = period
-//                case .failed:
-//                    break
-//                }
-//            }
-        func coordinateToPeriodView() {
-            let viewController = PeriodViewController()
-            navigationController.pushViewController(viewController, animated: true)
+    func register(firstName: String, lastName: String, email: String, password: String, passwordConfirm: String) {
+        dataManager.signUp(firstName, lastName, email, password, passwordConfirm) { [self]  success, message in
+            if success {
+                DispatchQueue.main.async {
+                    // Navigate to the home screen
+                    self.coordinateToHomeView()
+                    print(message)
+                }
+            } else {
+                DispatchQueue.main.async { [self] in
+                    // Navigate to the login screen with an error message
+                    print(message)
+                    coordinateToErrorView()
+                }
+            }
         }
+    }
+
+    func coordinateToPeriodView() {
+        let viewController = PeriodViewController()
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    func coordinateToMenuTabBarView() {
+        let viewController = MenuTabBarController()
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func coordinateToLoginView() {
+        let viewModel = LoginViewModel(dataManager, self)
+        let viewController = LoginViewController()
+        viewController.viewModel = viewModel
+        
+        navigationController.pushViewController(viewController, animated: true)
+    }
         
         func coordinateToCalendarView() {
             let viewController = CalendarViewController()

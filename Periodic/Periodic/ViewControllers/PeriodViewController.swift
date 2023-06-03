@@ -9,14 +9,12 @@ import UIKit
 
 class PeriodViewController: UIViewController {
     var manager = 1
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemMint
         addSubviews()
     }
-    
     func addSubviews() {
         view.addSubview(circleProgressView)
     }
