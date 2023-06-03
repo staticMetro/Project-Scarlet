@@ -196,7 +196,10 @@
 				B2DCBDF529F348CB0098BB52 /* ErrorViewModel.swift */,
 				B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */,
 				B2DCBDEF29EF6BB30098BB52 /* LoginViewModel.swift */,
+<<<<<<< HEAD
 				B2FFA3662A05D67F0014A913 /* WelcomeViewModel.swift */,
+=======
+>>>>>>> main
 			);
 			path = ViewModel;
 			sourceTree = "<group>";

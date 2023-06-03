@@ -28,7 +28,6 @@
 .header-wrapper img {
     height: 64px;
     width: 64px;
-    border-radius: 9px;
 }
 
 /*CENTER*/
@@ -52,7 +51,7 @@
 
 /*FOOTER*/
 .footer {
-    height: 200px;
+    height: 100px;
     background: linear-gradient(to top, #FFD3C4 20%, #FFC5B0 100%);
     padding: 40px;
     color: #13435B;
