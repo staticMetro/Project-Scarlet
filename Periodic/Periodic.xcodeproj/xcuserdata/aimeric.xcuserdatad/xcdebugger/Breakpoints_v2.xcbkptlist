@@ -92,8 +92,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -217,6 +217,36 @@
                   endingLineNumber = "47"
                   offsetFromSymbolStart = "532">
                </Location>
+               <Location
+                  uuid = "B50F3728-ADB6-4796-B65B-9FF4A5E54BCB - 84a1e252196cbc1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "390">
+               </Location>
+               <Location
+                  uuid = "B50F3728-ADB6-4796-B65B-9FF4A5E54BCB - 84a1e252196cbc1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "532">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -230,8 +260,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -310,6 +340,21 @@
                   endingLineNumber = "55"
                   offsetFromSymbolStart = "767">
                </Location>
+               <Location
+                  uuid = "AB2FD5BE-3ABC-4ACD-AF3E-A6CF0A35521F - 84a1e252196cbde4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "767">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -323,8 +368,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -463,6 +508,36 @@
                   endingLineNumber = "66"
                   offsetFromSymbolStart = "628">
                </Location>
+               <Location
+                  uuid = "81CA87BC-3C81-4EF1-BB3C-3C788AC5877E - 176d368b8854e961"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "426">
+               </Location>
+               <Location
+                  uuid = "81CA87BC-3C81-4EF1-BB3C-3C788AC5877E - 176d368b8854e961"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "628">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -476,8 +551,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -571,6 +646,21 @@
                   endingLineNumber = "67"
                   offsetFromSymbolStart = "2412">
                </Location>
+               <Location
+                  uuid = "8FCF6986-7DE2-4D3D-96B9-CF1CBBDD935B - 176d368b8854e880"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "2412">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -584,8 +674,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -664,6 +754,21 @@
                   endingLineNumber = "70"
                   offsetFromSymbolStart = "680">
                </Location>
+               <Location
+                  uuid = "55DFDF6F-CA34-42CB-AFCB-CE586C83DC81 - 176d368b8854e8fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "680">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -677,8 +782,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -802,6 +907,36 @@
                   endingLineNumber = "71"
                   offsetFromSymbolStart = "1434">
                </Location>
+               <Location
+                  uuid = "C08FAE00-897B-4545-965F-0D9B50595C27 - 176d368b8854e81c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1207">
+               </Location>
+               <Location
+                  uuid = "C08FAE00-897B-4545-965F-0D9B50595C27 - 176d368b8854e81c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1434">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -815,8 +950,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -908,6 +1043,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "81"
                   endingLineNumber = "81"
+                  offsetFromSymbolStart = "2398">
+               </Location>
+               <Location
+                  uuid = "3740BD04-557B-40F4-8247-AAFE66100655 - 84a1e252196cb8be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
                   offsetFromSymbolStart = "2398">
                </Location>
             </Locations>
@@ -1079,8 +1229,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -1174,6 +1324,21 @@
                   endingLineNumber = "58"
                   offsetFromSymbolStart = "906">
                </Location>
+               <Location
+                  uuid = "465CE506-B2B6-4285-836F-E10B30748716 - 84a1e252196cbd81"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "906">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -1187,8 +1352,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -1250,6 +1415,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "53"
                   endingLineNumber = "53"
+                  offsetFromSymbolStart = "638">
+               </Location>
+               <Location
+                  uuid = "4293FD11-C284-4B60-B530-29A413F316B6 - 84a1e252196cbd5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
                   offsetFromSymbolStart = "638">
                </Location>
             </Locations>
@@ -1988,8 +2168,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2053,6 +2233,21 @@
                   endingLineNumber = "59"
                   offsetFromSymbolStart = "1338">
                </Location>
+               <Location
+                  uuid = "F8F8BDCA-E87C-448C-AA38-F23F921913D3 - 84a1e252196cbe60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1338">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2066,8 +2261,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2206,6 +2401,36 @@
                   endingLineNumber = "65"
                   offsetFromSymbolStart = "228">
                </Location>
+               <Location
+                  uuid = "08F8B000-AA11-46F2-AAE1-EDF64BF45559 - 84a1e252196cbecf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1984">
+               </Location>
+               <Location
+                  uuid = "08F8B000-AA11-46F2-AAE1-EDF64BF45559 - 176d368b8854e946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "228">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2219,8 +2444,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2299,6 +2524,21 @@
                   endingLineNumber = "78"
                   offsetFromSymbolStart = "2277">
                </Location>
+               <Location
+                  uuid = "E50043A5-D7D4-402C-8AF7-F0041AF98E9F - 176d368b8854eff5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "75"
+                  endingLineNumber = "75"
+                  offsetFromSymbolStart = "2277">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2312,8 +2552,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2392,6 +2632,21 @@
                   endingLineNumber = "79"
                   offsetFromSymbolStart = "2301">
                </Location>
+               <Location
+                  uuid = "1F662A97-BDC1-4AE3-ABD2-8B3FE9A912C0 - 176d368b8854ef14"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "2301">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2405,10 +2660,42 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9DDEDFE6-29DD-441A-97ED-3556DE6EB759 - 176d368b8854ef98"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "1771">
+               </Location>
+               <Location
+                  uuid = "9DDEDFE6-29DD-441A-97ED-3556DE6EB759 - 176d368b8854e83f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1771">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2421,10 +2708,42 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5C8A4ACE-72FF-4A16-B739-80621470B738 - 176d368b8854efbb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "1902">
+               </Location>
+               <Location
+                  uuid = "5C8A4ACE-72FF-4A16-B739-80621470B738 - 176d368b8854e85e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1902">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2470,6 +2789,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "42"
                   endingLineNumber = "42"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "F4FCB356-14B2-43C2-AFBE-FB375E8DE8E3 - 8f9f6906ad43503"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.loginButtonTapped() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
                   offsetFromSymbolStart = "104">
                </Location>
             </Locations>
@@ -2764,10 +3098,42 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "06CF0627-D794-437F-8654-BAEAD6B08419 - 176d368b8854efda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "1915">
+               </Location>
+               <Location
+                  uuid = "06CF0627-D794-437F-8654-BAEAD6B08419 - 176d368b8854e879"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "1915">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2780,8 +3146,8 @@
             filePath = "Periodic/DataManager/PeriodDataManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "login(username:password:completion:)"
             landmarkType = "7">
             <Locations>
@@ -2815,6 +3181,36 @@
                   endingLineNumber = "65"
                   offsetFromSymbolStart = "228">
                </Location>
+               <Location
+                  uuid = "2F0C0C7C-9579-4C29-9A24-142A8D29F23E - 84a1e252196cbecf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "1984">
+               </Location>
+               <Location
+                  uuid = "2F0C0C7C-9579-4C29-9A24-142A8D29F23E - 176d368b8854e946"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Periodic.PeriodDataManager.login(username: Swift.String, password: Swift.String, completion: (Swift.Bool, Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/DataManager/PeriodDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "228">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2828,8 +3224,8 @@
             filePath = "Periodic/ViewControllers/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "handleLoginRegisterChange()"
             landmarkType = "7">
             <Locations>
@@ -2908,6 +3304,51 @@
                   endingLineNumber = "93"
                   offsetFromSymbolStart = "436">
                </Location>
+               <Location
+                  uuid = "F885330E-7DF5-4DC2-8749-97B247FD8C29 - 37286fa9a394350a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.handleLoginRegisterChange() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "F885330E-7DF5-4DC2-8749-97B247FD8C29 - 37286fa9a394354c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.handleLoginRegisterChange() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "436">
+               </Location>
+               <Location
+                  uuid = "F885330E-7DF5-4DC2-8749-97B247FD8C29 - 37286fa9a394352d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.handleLoginRegisterChange() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "436">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2921,8 +3362,8 @@
             filePath = "Periodic/ViewControllers/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "handleLoginRegisterChange()"
             landmarkType = "7">
             <Locations>
@@ -2971,6 +3412,51 @@
                   endingLineNumber = "90"
                   offsetFromSymbolStart = "69">
                </Location>
+               <Location
+                  uuid = "0D94DCBC-FD89-4A22-8159-BD1CA4396D41 - 37286fa9a39435a9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.handleLoginRegisterChange() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "0D94DCBC-FD89-4A22-8159-BD1CA4396D41 - 37286fa9a39435eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.handleLoginRegisterChange() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "69">
+               </Location>
+               <Location
+                  uuid = "0D94DCBC-FD89-4A22-8159-BD1CA4396D41 - 37286fa9a39435c8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.handleLoginRegisterChange() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "69">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -2988,6 +3474,180 @@
             endingLineNumber = "43"
             landmarkName = "register(firstName:lastName:email:password:passwordConfirm:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "91F66B85-67DF-4BE5-846F-5DC0681FECF3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Periodic/ViewControllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "setupViews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "91F66B85-67DF-4BE5-846F-5DC0681FECF3 - 5e81f5ec7751d8d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "828">
+               </Location>
+               <Location
+                  uuid = "91F66B85-67DF-4BE5-846F-5DC0681FECF3 - 5e81f5ec7751db35"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "828">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B06AB412-9C5C-4BE4-8CBA-B787E3CE02E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Periodic/ViewControllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "setupViews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B06AB412-9C5C-4BE4-8CBA-B787E3CE02E1 - 5e81f5ec7751d8f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "898">
+               </Location>
+               <Location
+                  uuid = "B06AB412-9C5C-4BE4-8CBA-B787E3CE02E1 - 5e81f5ec7751d8f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+               <Location
+                  uuid = "B06AB412-9C5C-4BE4-8CBA-B787E3CE02E1 - 5e81f5ec7751d8d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "898">
+               </Location>
+               <Location
+                  uuid = "B06AB412-9C5C-4BE4-8CBA-B787E3CE02E1 - 5e81f5ec7751d8d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "1016">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "57A68F78-11CF-4D92-B1DF-3385C8BB9995"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Periodic/ViewControllers/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "setupViews()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "57A68F78-11CF-4D92-B1DF-3385C8BB9995 - 5e81f5ec7751d896"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "189"
+                  endingLineNumber = "189"
+                  offsetFromSymbolStart = "1139">
+               </Location>
+               <Location
+                  uuid = "57A68F78-11CF-4D92-B1DF-3385C8BB9995 - 5e81f5ec7751d8f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Periodic.LoginViewController.setupViews() -&gt; ()"
+                  moduleName = "Periodic"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aimeric/Desktop/Projects/xcodeProjects/Project-Scarlet/Periodic/Periodic/ViewControllers/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "1139">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

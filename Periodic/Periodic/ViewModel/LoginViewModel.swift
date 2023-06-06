@@ -10,7 +10,7 @@ import UIKit
 
 protocol LoginViewModelProtocol {
     func loginButtonTapped(username: String, password: String)
-    func registerButtonTapped(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String)
+    func registerButtonTapped(_ firstName: String ,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String)
 }
 
 struct LoginViewModel: LoginViewModelProtocol {
@@ -24,7 +24,9 @@ struct LoginViewModel: LoginViewModelProtocol {
     func loginButtonTapped(username: String, password: String) {
         coordinator.login(username: username, password: password)
     }
-    func registerButtonTapped(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String) {
-        coordinator.register(firstName: firstName, lastName: lastName, email: email, password: password, passwordConfirm: passwordConfirm)
+    func registerButtonTapped(_ firstName: String, _ lastName: String, _ email: String,
+                              _ password: String, _ passwordConfirm: String) {
+        coordinator.register(firstName: firstName, lastName: lastName, email: email,
+                             password: password, passwordConfirm: passwordConfirm)
     }
 }

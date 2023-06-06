@@ -6,9 +6,6 @@
 //
 
 import Foundation
-import PostgresNIO
-import NIO
-import NIOTransportServices
 
 enum PeriodDataManagingResponseStatus<T> {
     case initial
@@ -150,7 +147,7 @@ struct PeriodDataManager: PeriodDataManaging {
         }
         task.resume()
     }
-    func signUp(_ firstName: String,_ lastName: String, _ email: String, _ password: String, _ passwordConfirm: String, completion: @escaping (Bool, String) -> Void) {
+    func signUp(_ email: String, _ firstName: String,_ lastName: String, _ password: String, _ passwordConfirm: String, completion: @escaping (Bool, String) -> Void) {
         guard let url = URL(string: Constant.URL.apiURLLogin) else {
             completion(false, "error")
             return
