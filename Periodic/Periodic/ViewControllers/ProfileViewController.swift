@@ -12,29 +12,29 @@ import SwiftUI
 class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let swiftUIViewController = UIHostingController(rootView: SetingsView())
-//        self.navigationController?.pushViewController(swiftUIViewController, animated: false)
-//        self.navigationController?.pushViewController(swiftUIViewController, animated: false)
+        let settingsViewController = UIHostingController(rootView: SettingsView())
+        present(settingsViewController, animated: true)
     }
     
 }
-struct ProfileViewController: View {
+struct SettingsView: View {
     var body: some View {
         SettingStack {
-            SettingPage(title: "Playground") {
+            SettingPage(title: "Settings") {
                 SettingGroup {
-                    SettingText(title: "Hello!")
+                    SettingPage(title: "General") {}
+                        .previewIcon("gear")
                 }
 
                 SettingGroup {
-                    SettingPage(title: "First Page") {}
-                        .previewIcon("star")
+                    SettingPage(title: "HealthKit") {}
+                        .previewIcon("heart", color: .pink)
 
-                    SettingPage(title: "Second Page") {}
-                        .previewIcon("sparkles")
+                    SettingPage(title: "Notifications") {}
+                        .previewIcon("bell.badge.fill", color: .orange)
 
-                    SettingPage(title: "Third Page") {}
-                        .previewIcon("leaf.fill")
+                    SettingPage(title: "About the Developers") {}
+                        .previewIcon("person.fill", color: .teal)
                 }
             }
         }
