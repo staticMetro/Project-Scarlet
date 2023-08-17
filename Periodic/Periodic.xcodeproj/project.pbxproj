@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B26D537A29FC1A4300CD32D6 /* MenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26D537929FC1A4300CD32D6 /* MenuTabBarController.swift */; };
+		B27C3E322A44AC9600B44190 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C3E312A44AC9600B44190 /* OnboardingView.swift */; };
 		B28F2FA729E33AE60087B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FA629E33AE60087B515 /* AppDelegate.swift */; };
 		B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FA829E33AE60087B515 /* SceneDelegate.swift */; };
 		B28F2FAB29E33AE60087B515 /* PeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FAA29E33AE60087B515 /* PeriodViewController.swift */; };
@@ -22,6 +23,7 @@
 		B28F2FE029E343FD0087B515 /* PeriodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FDF29E343FD0087B515 /* PeriodModel.swift */; };
 		B28F2FE329E344160087B515 /* PeriodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FE229E344160087B515 /* PeriodCoordinator.swift */; };
 		B28F2FE629E3444A0087B515 /* PeriodDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FE529E3444A0087B515 /* PeriodDataManager.swift */; };
+		B292931D2A8E78B8003C1AC4 /* Setting in Frameworks */ = {isa = PBXBuildFile; productRef = B292931C2A8E78B8003C1AC4 /* Setting */; };
 		B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */; };
 		B2DCBDE529EAE5C20098BB52 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDE429EAE5C20098BB52 /* ProfileViewModel.swift */; };
 		B2DCBDEB29EB00E60098BB52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCBDEA29EB00E60098BB52 /* LoginViewController.swift */; };
@@ -54,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		B26D537929FC1A4300CD32D6 /* MenuTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTabBarController.swift; sourceTree = "<group>"; };
+		B27C3E312A44AC9600B44190 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		B28F2FA329E33AE60087B515 /* Periodic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Periodic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28F2FA629E33AE60087B515 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28F2FA829E33AE60087B515 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B292931D2A8E78B8003C1AC4 /* Setting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +179,7 @@
 				B28F2FD629E343340087B515 /* CalendarViewController.swift */,
 				B2E3448B29E5EEAE001D2279 /* LoadingViewController.swift */,
 				B2DCBDE229EAE5A50098BB52 /* ProfileViewController.swift */,
+				B27C3E312A44AC9600B44190 /* OnboardingView.swift */,
 				B2DCBDEC29EB00E90098BB52 /* WelcomeViewController.swift */,
 				B2DCBDEA29EB00E60098BB52 /* LoginViewController.swift */,
 				B2DCBDF329F348BF0098BB52 /* ErrorViewController.swift */,
@@ -246,6 +251,7 @@
 			);
 			name = Periodic;
 			packageProductDependencies = (
+				B292931C2A8E78B8003C1AC4 /* Setting */,
 			);
 			productName = Periodic;
 			productReference = B28F2FA329E33AE60087B515 /* Periodic.app */;
@@ -320,6 +326,7 @@
 			);
 			mainGroup = B28F2F9A29E33AE60087B515;
 			packageReferences = (
+				B292931B2A8E78B8003C1AC4 /* XCRemoteSwiftPackageReference "Setting" */,
 			);
 			productRefGroup = B28F2FA429E33AE60087B515 /* Products */;
 			projectDirPath = "";
@@ -405,6 +412,7 @@
 				B28F2FE629E3444A0087B515 /* PeriodDataManager.swift in Sources */,
 				B2DCBDE329EAE5A50098BB52 /* ProfileViewController.swift in Sources */,
 				B2DCBDF029EF6BB30098BB52 /* LoginViewModel.swift in Sources */,
+				B27C3E322A44AC9600B44190 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +748,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B292931B2A8E78B8003C1AC4 /* XCRemoteSwiftPackageReference "Setting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Setting";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B292931C2A8E78B8003C1AC4 /* Setting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B292931B2A8E78B8003C1AC4 /* XCRemoteSwiftPackageReference "Setting" */;
+			productName = Setting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B28F2F9B29E33AE60087B515 /* Project object */;
 }

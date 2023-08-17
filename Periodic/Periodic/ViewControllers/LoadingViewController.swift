@@ -38,13 +38,15 @@ class LoadingViewController: UIViewController {
         aspectRatio = (loadingImageView.image?.size.width ?? 0.0) / (loadingImageView.image?.size.height ?? 0.0)
 // swiftlint:disable all
         constraints.append(loadingImageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor))
-        constraints.append(loadingImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 250))
+        constraints.append(loadingImageView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: 25))
+
+//        constraints.append(loadingImageView.topAnchor.constraint(equalTo: label.bottomAnchor))
         constraints.append(loadingImageView.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor))
         constraints.append(loadingImageView.trailingAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.trailingAnchor))
         constraints.append(loadingImageView.heightAnchor.constraint(equalTo: loadingImageView.widthAnchor, multiplier: 1/aspectRatio))
 
         constraints.append(label.topAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor))
-        constraints.append(label.bottomAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -150))
+        constraints.append(label.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor, constant: -40))
         constraints.append(label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5))
         constraints.append(label.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 5))
 // swiftlint:enable all

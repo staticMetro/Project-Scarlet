@@ -19,9 +19,9 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     private var passwordTextField = UITextField()
     private var passwordConfirmTextField = UITextField()
     private var loginStackView = UIStackView()
+
     var viewModel: LoginViewModelProtocol?
     var signInUpButton = SocialLoginButton(text: "")
-    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -37,6 +37,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        loginRegisterSegmentedControl.selectedSegmentIndex = 0
     }
     @objc func loginButtonTapped() {
         let selectedIndex = loginRegisterSegmentedControl.selectedSegmentIndex
@@ -45,7 +46,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
               let password = passwordTextField.text else {
             return
         }
-        
         if title == "Register" {
             signInUpButton.removeTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
             signInUpButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
@@ -81,10 +81,8 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["Sign in", "Register"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-//            segmentedControl.tintColor = UIColor.systemPink
         segmentedControl.selectedSegmentIndex = 0
-        let selectedIndex = loginRegisterSegmentedControl.selectedSegmentIndex
-        let title = loginRegisterSegmentedControl.titleForSegment(at: selectedIndex)
+        segmentedControl.layer.cornerRadius = 16
         firstNameTextField.isHidden = true
         lastNameTextField.isHidden = true
         passwordConfirmTextField.isHidden = true
@@ -114,125 +112,64 @@ class LoginViewController: UIViewController, ASAuthorizationControllerDelegate {
         loginStackView.addArrangedSubview(appleLoginButton)
         loginStackView.addArrangedSubview(signInUpButton)
     }
+    private func setupTextField(_ textField: UITextField, _ textFieldName: String) {
+        textField.placeholder = textFieldName
+        textField.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        textField.textAlignment = .center
+        textField.backgroundColor = .secondarySystemBackground
+        textField.layer.cornerRadius = 18
+        textField.layer.borderWidth = 1
+        textField.keyboardType = .default
+        textField.autocapitalizationType = .none
+        textField.textColor = .systemPink
+    }
     private func setupUI() {
         loginStackView.alignment = .center
         loginStackView.spacing = 10
         loginStackView.distribution = .fillEqually
         loginStackView.axis = .vertical
         loginStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        firstNameTextField.placeholder = "First Name"
-        firstNameTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        firstNameTextField.textAlignment = .center
-        firstNameTextField.backgroundColor = .secondarySystemBackground
-        firstNameTextField.layer.cornerRadius = 9
-        firstNameTextField.layer.borderWidth = 1
-        firstNameTextField.keyboardType = .default
-        firstNameTextField.autocapitalizationType = .none
-        firstNameTextField.textColor = .systemPink
-        
-        lastNameTextField.placeholder = "Last Name"
-        lastNameTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        lastNameTextField.textAlignment = .center
-        lastNameTextField.backgroundColor = .secondarySystemBackground
-        lastNameTextField.layer.cornerRadius = 9
-        lastNameTextField.layer.borderWidth = 1
-        lastNameTextField.keyboardType = .default
-        lastNameTextField.autocapitalizationType = .none
-        lastNameTextField.textColor = .systemPink
-        
-        emailTextField.placeholder = "Email"
-        emailTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        emailTextField.textAlignment = .center
-        emailTextField.backgroundColor = .tertiarySystemGroupedBackground
-        emailTextField.layer.cornerRadius = 9
-        emailTextField.layer.borderWidth = 1
-        emailTextField.keyboardType = .emailAddress
-        emailTextField.autocapitalizationType = .none
-        emailTextField.textColor = .systemPink
-
-        
-        passwordTextField.placeholder = "Password"
-        passwordTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        passwordTextField.textAlignment = .center
-        passwordTextField.backgroundColor = .secondarySystemBackground
-        passwordTextField.layer.cornerRadius = 9
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.keyboardType = .default
-        passwordTextField.autocapitalizationType = .none
-        passwordTextField.textColor = .systemPink
-
-        
-        passwordConfirmTextField.placeholder = "Password Confirm"
-        passwordConfirmTextField.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        passwordConfirmTextField.textAlignment = .center
-        passwordConfirmTextField.backgroundColor = .secondarySystemBackground
-        passwordConfirmTextField.layer.cornerRadius = 9
-        passwordConfirmTextField.layer.borderWidth = 1
-        passwordConfirmTextField.keyboardType = .default
-        passwordConfirmTextField.autocapitalizationType = .none
-        passwordConfirmTextField.textColor = .systemPink
-
+        setupTextField(firstNameTextField, "First Name")
+        setupTextField(lastNameTextField, "Last Name")
+        setupTextField(emailTextField, "Email")
+        setupTextField(passwordTextField, "Password")
+        setupTextField(passwordConfirmTextField, "Password Confirm")
     }
     private func setupViews() {
         view.backgroundColor = .systemBackground
         let signInLabel = UILabel()
-        signInLabel.text = "Sign In"
-        signInLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-        signInLabel.textAlignment = .center
-        signInLabel.textColor = .systemPink
-        
-        view.addSubview(signInLabel)
         let selectedIndex = loginRegisterSegmentedControl.selectedSegmentIndex
         let title = loginRegisterSegmentedControl.titleForSegment(at: selectedIndex)
+        signInLabel.text = "Sign In"
+        signInLabel.font = UIFont.systemFont(ofSize: 48, weight: .bold)
+        signInLabel.textAlignment = .center
+        signInLabel.textColor = .systemPink
+        view.addSubview(signInLabel)
+        signInUpButton.layer.cornerRadius = 18
         signInUpButton.setTitle(title, for: .normal)
         signInUpButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
-            signInLabel.translatesAutoresizingMaskIntoConstraints = false
-            signInLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
-            signInLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
-                                                 constant: 16).isActive = true
-            signInLabel.trailingAnchor.constraint(equalTo:
-                                                    view.safeAreaLayoutGuide.trailingAnchor,
-                                                  constant: -16).isActive = true
-//        loginRegisterSegmentedControl.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 50).isActive = true
-//
-//            emailTextField.translatesAutoresizingMaskIntoConstraints = false
-//            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-//            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-//            passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-//        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor , constant: 10).isActive = true
-//            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-//            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
-//            appleLoginButton.translatesAutoresizingMaskIntoConstraints = false
-//        appleLoginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor , constant: 10).isActive = true
-//            appleLoginButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,
-//                                                    multiplier: 0.9).isActive = true
-//            appleLoginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//            appleLoginButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//            appleLoginButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-            signInUpButton.translatesAutoresizingMaskIntoConstraints = false
-//            signInUpButton.topAnchor.constraint(equalTo: appleLoginButton.bottomAnchor, constant: 40).isActive = true
-//            signInUpButton.widthAnchor.constraint(equalTo: self.view.widthAnchor,
-//                                                multiplier: 0.9).isActive = true
-//            signInUpButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//            signInUpButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        
+        signInLabel.translatesAutoresizingMaskIntoConstraints = false
+        signInLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
+        signInLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,
+                                             constant: 16).isActive = true
+        signInLabel.trailingAnchor.constraint(equalTo:
+                                                view.safeAreaLayoutGuide.trailingAnchor,
+                                                constant: -16).isActive = true
+        signInUpButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             loginStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             loginStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             loginStackView.topAnchor.constraint(equalTo: signInLabel.bottomAnchor, constant: 50),
-            loginStackView.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 300),
-
+            loginStackView.bottomAnchor.constraint(lessThanOrEqualTo:
+                                                    view.safeAreaLayoutGuide.bottomAnchor, constant: 300),
             firstNameTextField.widthAnchor.constraint(equalToConstant: 250),
             lastNameTextField.widthAnchor.constraint(equalToConstant: 250),
             emailTextField.widthAnchor.constraint(equalToConstant: 250),
             passwordTextField.widthAnchor.constraint(equalToConstant: 250),
             passwordConfirmTextField.widthAnchor.constraint(equalToConstant: 250),
-            
-//            signInUpButton.topAnchor.constraint(equalTo: appleLoginButton.bottomAnchor, constant: 40),
-            signInUpButton.widthAnchor.constraint(equalTo: loginStackView.widthAnchor, multiplier: 0.4),
-            signInUpButton.heightAnchor.constraint(equalToConstant: 30)
+            signInUpButton.widthAnchor.constraint(equalTo: loginStackView.widthAnchor, multiplier: 0.75),
+            signInUpButton.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }
@@ -250,7 +187,7 @@ class SocialLoginButton: UIButton {
         stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         backgroundColor = .white
-        layer.cornerRadius = 10
+        layer.cornerRadius = 18
         layer.borderWidth = 1
         layer.shadowOpacity = 0.08
         layer.shadowRadius = 60

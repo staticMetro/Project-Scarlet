@@ -28,6 +28,7 @@ class ErrorViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         tryAgainButton.backgroundColor = .systemPink
+        tryAgainButton.layer.cornerRadius = 18
         tryAgainButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
 
         view.addSubview(tryAgainButton)

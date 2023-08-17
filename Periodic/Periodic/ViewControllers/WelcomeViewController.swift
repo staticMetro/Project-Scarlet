@@ -30,9 +30,6 @@ class WelcomeScreenViewController: UIViewController {
         signInButton.setTitleColor(UIColor(named: "PrimaryColor"), for: .normal)
         signInButton.backgroundColor = .systemBackground
         signInButton.layer.cornerRadius = 50.0
-//        signInButton.layer.shadowColor = UIColor.black.withAlphaComponent(0.08).cgColor
-//        signInButton.layer.shadowRadius = 60
-//        signInButton.layer.shadowOffset = CGSize(width: 0, height: 16)
         signInButton.addTarget(self, action: #selector(signInButtonTapped), for: .touchUpInside)
 
         let newAroundHereLabel = UILabel()

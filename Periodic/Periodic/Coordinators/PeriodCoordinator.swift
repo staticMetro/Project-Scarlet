@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 protocol Coordinator {
     func start()
@@ -21,7 +22,12 @@ class PeriodCoordinator: Coordinator {
     }
     func start() {
 //        coordinateToWelcomeView()
-        coordinateToLoginView()
+//        coordinateToLoginView()
+//        coordinateToOnboardingView()
+//        coordinateToErrorView()
+//        coordinateToPeriodView()
+        coordinateToHomeView()
+//        coordinateToCalendarView()
     }
     func login(username: String, password: String) {
         dataManager.login(username: username, password: password) { [self] success, message in
@@ -57,7 +63,10 @@ class PeriodCoordinator: Coordinator {
             }
         }
     }
-
+    func coordinateToOnboardingView() {
+        let viewController = UIHostingController(rootView: OnboardingView())
+        navigationController.pushViewController(viewController, animated: true)
+    }
     func coordinateToPeriodView() {
         let viewController = PeriodViewController()
         navigationController.pushViewController(viewController, animated: true)
