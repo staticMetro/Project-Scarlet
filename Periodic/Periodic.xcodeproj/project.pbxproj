@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B26D537A29FC1A4300CD32D6 /* MenuTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26D537929FC1A4300CD32D6 /* MenuTabBarController.swift */; };
 		B27C3E322A44AC9600B44190 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C3E312A44AC9600B44190 /* OnboardingView.swift */; };
+		B26D537D29FC884500CD32D6 /* PostgresNIO in Frameworks */ = {isa = PBXBuildFile; productRef = B26D537C29FC884500CD32D6 /* PostgresNIO */; };
 		B28F2FA729E33AE60087B515 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FA629E33AE60087B515 /* AppDelegate.swift */; };
 		B28F2FA929E33AE60087B515 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FA829E33AE60087B515 /* SceneDelegate.swift */; };
 		B28F2FAB29E33AE60087B515 /* PeriodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28F2FAA29E33AE60087B515 /* PeriodViewController.swift */; };
@@ -95,6 +96,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B292931D2A8E78B8003C1AC4 /* Setting in Frameworks */,
+				B2CA5F1629F425B500D35A1F /* GoogleSignIn in Frameworks */,
+				B26D537D29FC884500CD32D6 /* PostgresNIO in Frameworks */,
+				B2CA5F1829F425B500D35A1F /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

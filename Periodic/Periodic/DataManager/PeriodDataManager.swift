@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import PostgresNIO
+import NIO
+import NIOTransportServices
 
 enum PeriodDataManagingResponseStatus<T> {
     case initial
@@ -17,6 +20,9 @@ enum PeriodDataManagingResponseStatus<T> {
 
 protocol PeriodDataManaging {
     func login(username: String, password: String, completion: @escaping (Bool, String) -> Void)
+    func fetchUserInfo(completion: @escaping (PeriodDataManagingResponseStatus<[UserModel]>) -> Void)
+    func testAPICall()
+    func fetchUserPeriodInfo(completion: @escaping (PeriodDataManagingResponseStatus<[PeriodModel]>) -> Void)
 }
 
 struct PeriodDataManager: PeriodDataManaging {
@@ -186,4 +192,65 @@ struct PeriodDataManager: PeriodDataManaging {
         } 
         task.resume()
     }
+    private func postUserData <T: Decodable>(urlString: String, modelType: T.Type,
+                                             completion: @escaping (PeriodDataManagingResponseStatus<[T]>) -> Void) {
+        guard let urlLink = urlString.addingPercentEncoding(withAllowedCharacters:
+                                                            NSCharacterSet.urlQueryAllowed) else {
+            completion(.failed(NSError(domain: "Error: cannot create URL", code: 10001)))
+            return
+        }
+        guard let url = URL(string: urlLink) else {
+            completion(.failed(NSError(domain: "Error: cannot create URL", code: 10001)))
+            return
+        }
+        completion(.loading)
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        // Model to Data Convert (JSONEncoder() + Encodable)
+        request.allHTTPHeaderFields = [
+                    "Content-Type": "application/json"
+        ]
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data else { return }
+            do {
+                // Data to Model convert - JSONDecoder() + Decodable
+                let userResponse = try JSONDecoder().decode(UserModel.self, from: data)
+                print(userResponse)
+            }catch {
+                print(error)
+            }
+        }.resume()
+    }
+    private func postPeriodData <T: Decodable>(urlString: String, modelType: T.Type,
+                                         completion: @escaping (PeriodDataManagingResponseStatus<[T]>) -> Void) {
+        guard let urlLink = urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
+            completion(.failed(NSError(domain: "Error: cannot create URL", code: 10001)))
+            return
+        }
+        guard let url = URL(string: urlLink) else {
+            completion(.failed(NSError(domain: "Error: cannot create URL", code: 10001)))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        // Model to Data Convert (JSONEncoder() + Encodable)
+        request.allHTTPHeaderFields = [
+                    "Content-Type": "application/json"
+                ]
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data else { return }
+            do {
+                // Data to Model convert - JSONDecoder() + Decodable
+                let userResponse = try JSONDecoder().decode(UserModel.self, from: data)
+                print(userResponse)
+            }catch {
+                print(error)
+            }
+        }.resume()
+    }
+    
 }

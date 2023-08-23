@@ -14,11 +14,11 @@ class MenuTabBarController: UITabBarController {
         let firstViewController = CalendarViewController()
         let image = UIImage(systemName: "calendar")
         firstViewController.tabBarItem = UITabBarItem(title: "Calendar",
-                                                      image: image, tag: 0)
+                                                      image: UIImage(systemName: "calendar"), tag: 0)
         let thirdViewController = ProfileViewController()
         thirdViewController.tabBarItem = UITabBarItem(title: "My Profile",
                                                        image: UIImage(systemName: "gearshape.fill"), tag: 1)
-        let secondViewController = LoadingViewController()
+        let secondViewController = CalendarViewController()
         secondViewController.tabBarItem = UITabBarItem(title: "Tips",
                                                        image: UIImage(systemName: "heart.fill"), tag: 2)
         viewControllers = [firstViewController, secondViewController, thirdViewController]
